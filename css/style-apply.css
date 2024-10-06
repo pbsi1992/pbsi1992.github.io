@@ -1,0 +1,302 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 500px;
+    background-image: url('../Assets/frontBuilding2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    height: 100%;
+    opacity: 1;
+    background-image: linear-gradient(180deg, rgba(0, 38, 82, 0.8) 50%, rgba(240, 240, 229, 1) 100%);
+}
+
+.hero-content {
+    position: relative;
+    padding: 0;
+    padding-top: 10%;
+    top: auto;
+}
+
+.hero-title {
+    font-size: 5rem;
+    margin: 0;
+    padding: 0 5%;
+}
+
+.hero-description {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 5%;
+}
+
+@media (max-width: 7000px) {
+    .hero-content {
+        padding: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 10%;
+        padding-top: 10%;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-description {
+        font-size: 1.5rem;
+    }
+}
+
+/* Centered legend with rounded rectangle and gradient background */
+legend {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #002652 0%, #0055b8 100%);
+    color: white;
+    font-weight: bold;
+}
+
+/* Hide labels for reset and submit buttons */
+label[for="contact"], label[for="submit"] {
+    display: none;
+}
+
+/* Basic styles for the form */
+.apply {
+    padding: 20px 10%;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #f9f9f9 0;
+    border: 0px solid #ccc;
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: separate; /* Use separate borders to apply border-spacing */
+    border-spacing: 0 20px; /* Add vertical space between rows */
+}
+
+tr {
+    width: 100%; /* Fill the entire row */
+}
+
+td {
+    padding: 10px;
+    vertical-align: top;
+    border: 0px solid red;
+}
+
+.centered-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.centered-row td {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Flexbox styling for horizontal label and radio buttons */
+.horizontal-label {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Align to the right */;
+    margin: 0;
+}
+
+.horizontal-label input[type="radio"] {
+    margin-left: 5px;
+}
+
+/* Input field styles */
+.input-field {
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Radio button styles */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Button styles */
+.input-button {
+    padding: 10px 20px;
+    border: 0px solid white;
+    border: 5px solid #F0F0E5;
+    border-radius: 100px;
+    background-color: #002652;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+
+.input-button:hover {
+    background-color: white;
+    color: #002652;
+    border: 5px solid #002652;
+}
+
+.cta-button {
+    background-color: #D9A520;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #D9A520;
+    border: 5px solid #D9A520;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 100px;
+}
+
+.button-container .input-button {
+    flex: 1;
+    margin: 0;
+    max-width: fit-content;
+}
+
+.input-border {
+    /* background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
+    background: #ababab; */
+    border-radius: 50px;
+    padding: 0.3rem;
+    margin: 0;
+    width: 100%;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); */
+    max-width: 70%;
+    height: 60px;
+}
+
+.input-frame {
+    background-color: #fff;
+    border: 5px solid #ababab;
+    margin: 0;
+    padding: 1rem;
+    padding-top: 1rem;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: inherit;
+    transition: all 0.3s;
+}
+.input-frame:hover {
+    border: 5px solid #002652;
+}
+
+.civil-frame {
+    height: fit-content;
+    border-radius: 47px;
+}
+
+.remove-margin-padding {
+    margin: 0;
+    padding: 0;
+}
+
+.padding-zero {
+    padding: 0;
+}
+
+.align-right {
+    margin-left: auto;
+}
+
+.sex-title {
+    padding: 0;
+    margin: 0;
+    margin-top: 2px;
+    margin-right: 20px; /* Adjust the value as needed */
+}
+
+.sex-choice {
+    margin-top: 2px;
+}
+
+@media (max-width: 1000px) {
+    .input-border {
+        max-width: 95%; /* Ensure it doesn't exceed the container's width */
+    }
+}
+
+@media (max-width: 768px) {
+    .input-border {
+        max-width: 97.5%; /* Ensure it doesn't exceed the container's width */
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-row .input-border {
+        width: 100%;
+    }
+
+    .margin-bottom {
+        margin-bottom: 20px; /* Adjust the value as needed */
+    }
+}
+
+@media (max-width: 500px) {
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-container .input-button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .input-border {
+        height: 75px;
+    }
+}

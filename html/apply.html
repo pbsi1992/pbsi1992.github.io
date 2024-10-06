@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500">
+    <title>HTML Preview</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/style-apply.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="logo-container">
+            <img loading="lazy" src="../Assets/logo/PbsiLogoSmall.png" class="logo-image" alt="PBSI Logo" />
+            <div class="company-info">
+                <span class="company-name">PBSI</span>
+                <span class="company-subtitle">Sec Reg 2024010129678-00</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="nav-item nav-item-wide">
+                <a href="faculty.html" class="nav-link">About Us</a>
+            </div>
+            <div class="nav-item nav-item-cta">
+                <a href="apply.html" class="nav-link nav-link-cta">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <!--<img src="../Assets/sideBuilding.png" alt="" class="hero-background" />-->
+        <div class="hero-content">
+            <h1 class="hero-title">Apply Now!</h1>
+            <p class="hero-description">Fill up and answer the form to receive the PDF Registration Form in Email</p>
+        </div>
+    </section>
+
+    <fieldset class="apply">
+        <legend class="form-title">Apply Form</legend> <!-- Personal Information Form -->
+        <form id="applyForm" class="personal-info-form" action="https://api.web3forms.com/submit" method="POST"> <!--action="https://formsubmit.co/38d4deae1931f2ecf7dad0b378888564" method="POST"--><!--action="sent.html"-->
+            <input type="hidden" name="access_key" value="3e0eb43a-715e-4a1f-ab43-6b729196b441">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <table>
+                <tr>
+                    <td colspan="2" class="input-border">
+                        <input type="text" id="name" name="name" class="input-field input-frame" placeholder="Enter Name" required>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td colspan="2" class="input-border">
+                        <input type="text" id="address" name="address" class="input-field input-frame" placeholder="Enter Home Address" required>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td colspan="2" class="input-border">
+                        <input type="email" id="email" name="email" class="input-field input-frame" placeholder="Enter Email Address" required>
+                    </td>
+                </tr>
+        
+            <!-- -->
+                <tr class="form-row">
+                    <td class="padding-zero">
+                        <div class="input-border margin-bottom">
+                            <input type="number" id="age" name="age" class="input-field input-frame" placeholder="Enter Age" required>
+                        </div>
+                    </td>
+                    <td class="padding-zero">
+                        <div class="input-border align-right">
+                            <div class="input-frame">
+                                <div class="horizontal-label remove-margin-padding">
+                                    <label for="sex" class="sex-title">Enter Sex</label>
+                                    <input id="sex" name="sex" class="sex-choice" type="radio" value="male" required>Male</input>
+                                    <input name="sex" class="sex-choice" type="radio" value="female" required>Female</input>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" class="input-border">
+                        <div class="input-frame civil-frame">
+                            <label for="civil-status" class="centered-row">Enter Civil Status</label>
+                            <select name="civil-status" id="civil-status" class="input-field" required>
+                                <option value="" disabled selected>Select Civil Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widowed">Widowed</option>
+                                <option value="separated">Separated</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <!-- -->
+            </table>
+        
+        
+            <div class="button-container">
+                <input type="reset" value="Reset" class="input-button">
+                <input type="submit" value="Submit" class="input-button cta-button">
+            </div>
+        </form>
+    </fieldset>
+
+    <br>
+    <footer class="footer">
+        <div class="footer-content">
+            <section class="location-info">
+                <h2 class="seminary-name">Presbyterian Bible Seminary Inc.</h2>
+                <p class="address">
+                # 3-5 General Ricarte St. Kalayaan Subdivision 2009 Angeles City, Philippines (Main Campus)
+                </p>
+                <p class="address">
+                Jesus the Great King Presbyterian Church, Joven St., Brgy Babo Sacan, Porac, Pampanga, Philippines(Annex)
+                </p>
+            </section>
+            
+            <section class="contact-info">
+                <h3 class="contact-title">Email:</h3>
+                <p>
+                <span class="contact-label contact-detail">PBSI President:</span>
+                <a href="mailto:jkisinamal@yahoo.com" class="email-link contact-detail" target="_blank">jkisinamal@yahoo.com</a>
+                </p>
+                
+                <h3 class="contact-title">Contact Number:</h3>
+                <p class="contact-detail">President: (+63) 950 336 8754</p>
+                <p class="contact-detail">Registrar: (+63) 993 195 2398</p>
+            </section>
+        </div>
+    </footer>
+
+    <!--<script src="script.js"></script>-->
+</body>
+</html>
