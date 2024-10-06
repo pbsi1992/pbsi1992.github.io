@@ -15,7 +15,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    max-width: 100%;
     height: 100%;
     opacity: 1;
     background-image: linear-gradient(180deg, rgba(0, 38, 82, 0.8) 50%, rgba(240, 240, 229, 1) 100%);
@@ -61,7 +61,6 @@
     }
 }
 
-/* Centered legend with rounded rectangle and gradient background */
 legend {
     text-align: center;
     padding: 10px;
@@ -71,12 +70,11 @@ legend {
     font-weight: bold;
 }
 
-/* Hide labels for reset and submit buttons */
 label[for="contact"], label[for="submit"] {
     display: none;
 }
 
-/* Basic styles for the form */
+/* Basic styles */
 .apply {
     padding: 20px 10%;
     margin: 20px 0;
@@ -94,12 +92,12 @@ label[for="contact"], label[for="submit"] {
 /* Table styles */
 table {
     width: 100%;
-    border-collapse: separate; /* Use separate borders to apply border-spacing */
-    border-spacing: 0 20px; /* Add vertical space between rows */
+    border-collapse: separate;
+    border-spacing: 0 20px;
 }
 
 tr {
-    width: 100%; /* Fill the entire row */
+    width: 100%;
 }
 
 td {
@@ -130,11 +128,10 @@ label {
     font-weight: bold;
 }
 
-/* Flexbox styling for horizontal label and radio buttons */
 .horizontal-label {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Align to the right */;
+    align-items: center;
+    justify-content: center; 
     margin: 0;
 }
 
@@ -252,7 +249,7 @@ input[type="radio"] {
     padding: 0;
     margin: 0;
     margin-top: 2px;
-    margin-right: 20px; /* Adjust the value as needed */
+    margin-right: 20px;
 }
 
 .sex-choice {
@@ -261,13 +258,13 @@ input[type="radio"] {
 
 @media (max-width: 1000px) {
     .input-border {
-        max-width: 95%; /* Ensure it doesn't exceed the container's width */
+        max-width: 95%; 
     }
 }
 
 @media (max-width: 768px) {
     .input-border {
-        max-width: 97.5%; /* Ensure it doesn't exceed the container's width */
+        max-width: 97.5%;
     }
 
     .form-row {
@@ -280,7 +277,7 @@ input[type="radio"] {
     }
 
     .margin-bottom {
-        margin-bottom: 20px; /* Adjust the value as needed */
+        margin-bottom: 20px;
     }
 }
 
