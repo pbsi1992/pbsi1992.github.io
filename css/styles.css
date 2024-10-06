@@ -117,8 +117,8 @@ body {
 @media (max-width: 320px) {
     .nav-links {
         flex-wrap: nowrap;
-        font-size: 0.8rem;
-        gap: 0.5rem;
+        font-size: 0.7rem;
+        gap: 0.4rem;
     }
 }
 
