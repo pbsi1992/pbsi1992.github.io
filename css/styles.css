@@ -183,6 +183,21 @@ body {
     }
 }
 
+@media (max-width: 550px) {
+    .hero-content {
+        padding: 10%;
+        padding-top: 20%;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-description {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-content {
         padding: 10%;
