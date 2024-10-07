@@ -20,7 +20,7 @@ body {
     color: #fff;
     border-bottom: 5px solid #D9A520;
     position: sticky;
-    top: 0; /* Add this line */
+    top: 0;
     z-index: 1000;
 }
 
