@@ -8,6 +8,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@500">
     <title>HTML Preview</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/animations.css"> <!-- Include the animation styles -->
 </head>
 
 <body>
@@ -33,14 +34,13 @@
     </nav>
 
     <section class="hero-section">
-        <!--<img src="../Assets/sideBuilding.png" alt="" class="hero-background" />-->
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <h1 class="hero-title">Our Faculty</h1>
             <p class="hero-description">Meet our dedicated faculty, passionate about guiding students with a strong foundation in Biblical and Reformed theology.</p>
         </div>
     </section>
 
-    <section class="vision-section">
+    <section class="vision-section fade-in">
         <h1 class="vision-title">Our Vision</h1>
         <ul class="vision-description">
             <p>To be a leading Reformed Christian institution that proclaims the Gospel, ministers to the church, society, and God’s creation</p>
@@ -48,7 +48,7 @@
     </section>
 
     <section class="mission-section">
-        <div class="mission-container">
+        <div class="mission-container fade-in">
             <article class="mission-card">
                 <h2 class="mission-title">Our Mission</h2>
                 <p class="mission-intro">As a Christian institution, Presbyterian Bible Seminary Inc. aims to:</p>
@@ -63,7 +63,7 @@
     <br>
     <br>
     <section class="profile-card">
-    <div class="profile-border">
+    <div class="profile-border slide-in">
         <div class="profile-frame">
             <div class="profile-content faculty">
                 <img loading="lazy" src="../Assets/faculty_members/joval.jpg" class="profile-image" alt="Rev. Joval Kisinamal" />
@@ -103,7 +103,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content pic-top faculty">
                     <div class="profile-info">
@@ -138,7 +138,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content faculty">
                     <img loading="lazy" src="../Assets/faculty_members/kyung.jpg" class="profile-image" alt="Rev. Joval Kisinamal" />
@@ -172,7 +172,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content pic-top faculty">
                     <div class="profile-info">
@@ -197,7 +197,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content faculty">
                     <img loading="lazy" src="../Assets/faculty_members/ignacio.jpg" class="profile-image" alt="Rev. Joval Kisinamal" />
@@ -222,7 +222,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content pic-top faculty">
                     <div class="profile-info">
@@ -247,7 +247,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content faculty">
                     <img loading="lazy" src="../Assets/faculty_members/arnel.jpg" class="profile-image" alt="Rev. Joval Kisinamal" />
@@ -277,7 +277,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content pic-top faculty">
                     <div class="profile-info">
@@ -306,7 +306,7 @@
     </section>
 
     <section class="profile-card">
-        <div class="profile-border">
+        <div class="profile-border slide-in">
             <div class="profile-frame">
                 <div class="profile-content faculty">
                     <img loading="lazy" src="../Assets/faculty_members/ian.jfif" class="profile-image" alt="Rev. Joval Kisinamal" />
@@ -365,5 +365,7 @@
             </section>
         </div>
     </footer>
+
+    <script src="../js/animations.js"></script> <!-- Include the JavaScript file -->
 </body>
 </html>

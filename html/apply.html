@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@500">
-    <title>HTML Preview</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500">
+    <title>PBSI - Apply</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/style-apply.css">
+    <link rel="stylesheet" type="text/css" href="../css/animations.css"> <!-- Include the animation styles -->
 </head>
 
 <body>
@@ -34,39 +33,33 @@
     </nav>
 
     <section class="hero-section">
-        <!--<img src="Assets/sideBuilding.png" alt="" class="hero-background" />-->
-        <div class="hero-content">
+        <div class="hero-content fade-in"> <!-- Add fade-in class -->
             <h1 class="hero-title">Apply Now!</h1>
             <p class="hero-description">Fill up and answer the form to receive the PDF Registration Form in Email</p>
         </div>
     </section>
 
-    <fieldset class="apply">
+    <fieldset class="apply slide-in">
         <legend class="form-title">Apply Form</legend> <!-- Personal Information Form -->
-        <form id="applyForm" class="personal-info-form" action="https://api.web3forms.com/submit" method="POST"> <!--action="https://formsubmit.co/38d4deae1931f2ecf7dad0b378888564" method="POST"--><!--action="sent.html"-->
+        <form id="applyForm" class="personal-info-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="3e0eb43a-715e-4a1f-ab43-6b729196b441">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
             <table>
                 <tr>
                     <td colspan="2" class="input-border">
                         <input type="text" id="name" name="name" class="input-field input-frame" placeholder="Enter Name" required>
                     </td>
                 </tr>
-        
                 <tr>
                     <td colspan="2" class="input-border">
                         <input type="text" id="address" name="address" class="input-field input-frame" placeholder="Enter Home Address" required>
                     </td>
                 </tr>
-        
                 <tr>
                     <td colspan="2" class="input-border">
                         <input type="email" id="email" name="email" class="input-field input-frame" placeholder="Enter Email Address" required>
                     </td>
                 </tr>
-        
-            <!-- -->
                 <tr class="form-row">
                     <td class="padding-zero">
                         <div class="input-border margin-bottom">
@@ -85,7 +78,6 @@
                         </div>
                     </td>
                 </tr>
-                
                 <tr>
                     <td colspan="2" class="input-border">
                         <div class="input-frame civil-frame">
@@ -100,10 +92,7 @@
                         </div>
                     </td>
                 </tr>
-                <!-- -->
             </table>
-        
-        
             <div class="button-container">
                 <input type="reset" value="Reset" class="input-button">
                 <input type="submit" value="Submit" class="input-button cta-button">
@@ -111,26 +100,23 @@
         </form>
     </fieldset>
 
-    <br>
     <footer class="footer">
         <div class="footer-content">
             <section class="location-info">
                 <h2 class="seminary-name">Presbyterian Bible Seminary Inc.</h2>
                 <p class="address">
-                # 3-5 General Ricarte St. Kalayaan Subdivision 2009 Angeles City, Philippines (Main Campus)
+                    # 3-5 General Ricarte St. Kalayaan Subdivision 2009 Angeles City, Philippines (Main Campus)
                 </p>
                 <p class="address">
-                Jesus the Great King Presbyterian Church, Joven St., Brgy Babo Sacan, Porac, Pampanga, Philippines(Annex)
+                    Jesus the Great King Presbyterian Church, Joven St., Brgy Babo Sacan, Porac, Pampanga, Philippines(Annex)
                 </p>
             </section>
-            
             <section class="contact-info">
                 <h3 class="contact-title">Email:</h3>
                 <p>
-                <span class="contact-label contact-detail">PBSI President:</span>
-                <a href="mailto:jkisinamal@yahoo.com" class="email-link contact-detail" target="_blank">jkisinamal@yahoo.com</a>
+                    <span class="contact-label contact-detail">PBSI President:</span>
+                    <a href="mailto:jkisinamal@yahoo.com" class="email-link contact-detail" target="_blank">jkisinamal@yahoo.com</a>
                 </p>
-                
                 <h3 class="contact-title">Contact Number:</h3>
                 <p class="contact-detail">President: (+63) 950 336 8754</p>
                 <p class="contact-detail">Registrar: (+63) 993 195 2398</p>
@@ -138,6 +124,6 @@
         </div>
     </footer>
 
-    <!--<script src="script.js"></script>-->
+    <script src="../js/animations.js"></script> <!-- Include the JavaScript file -->
 </body>
 </html>
