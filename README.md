@@ -12,14 +12,14 @@ This repository contains the code and assets for the [PBSI website](https://pbsi
 
 ## Features
 
-- **Homepage**: Overview of the seminary and its programs.
-- **Faculty**: Learn more about our faculty members and our mission and vision.
-- **Apply Now**: Get in touch with PBSI to apply and join us.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- [Homepage](https://pbsi2024.github.io/index.html): Overview of the seminary and its programs.
+- [Faculty](https://pbsi2024.github.io/html/faculty.html): Learn more about our faculty members and our mission and vision.
+- [Apply Now](https://pbsi2024.github.io/html/apply.html): Get in touch with PBSI to apply and join us.
 
 ## Contact
 
 For more information, visit our website at [https://pbsi2024.github.io](https://pbsi2024.github.io) or reach out to us at jkisinamal@yahoo.com
+
+Contact Number:
+President: (+63) 950 336 8754
+Registrar: (+63) 993 195 2398
