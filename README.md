@@ -21,5 +21,5 @@ This repository contains the code and assets for the [PBSI website](https://pbsi
 For more information, visit our website at [https://pbsi2024.github.io](https://pbsi2024.github.io) or reach out to us at jkisinamal@yahoo.com
 
 Contact Number:
-President: (+63) 950 336 8754
-Registrar: (+63) 993 195 2398
+- **President:** (+63) 950 336 8754
+- **Registrar:** (+63) 993 195 2398
