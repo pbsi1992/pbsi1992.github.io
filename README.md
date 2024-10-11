@@ -12,14 +12,9 @@ This repository contains the code and assets for the [PBSI website](https://pbsi
 
 ## Features
 
-- **Homepage**: Overview of the seminary and its mission.
-- **Programs**: Information on the various programs offered by PBSI.
-- **Faculty**: Learn more about our faculty members.
-- **Contact Us**: Get in touch with PBSI for inquiries or support.
-
-## How to Contribute
-
-If you would like to contribute to the development of the website, feel free to fork this repository, make your changes, and submit a pull request. We welcome all contributions that help improve the website and its content.
+- **Homepage**: Overview of the seminary and its programs.
+- **Faculty**: Learn more about our faculty members and our mission and vision.
+- **Apply Now**: Get in touch with PBSI to apply and join us.
 
 ## License
 
@@ -27,4 +22,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For more information, visit our website at [https://pbsi2024.github.io](https://pbsi2024.github.io) or reach out to us at info@pbsi.edu.ph.
+For more information, visit our website at [https://pbsi2024.github.io](https://pbsi2024.github.io) or reach out to us at jkisinamal@yahoo.com
