@@ -63,7 +63,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" class="input-border">
-                        <input type="phone No." id="phone No." name="Phone No." class="input-field input-frame" placeholder="Enter Phone Number" required>
+                        <input type="number" id="phoneNum" name="Phone No." class="input-field input-frame" placeholder="Enter Phone Number" required>
                     </td>
                 </tr>
                 <tr class="form-row">
@@ -76,9 +76,13 @@
                         <div class="input-border align-right">
                             <div class="input-frame">
                                 <div class="horizontal-label remove-margin-padding">
-                                    <label for="sex" class="sex-title">Enter Sex</label>
-                                    <input id="sex" name="sex" class="sex-choice" type="radio" value="male" required>Male</input>
-                                    <input name="sex" class="sex-choice" type="radio" value="female" required>Female</input>
+                                    <label for="sex" class="input-title">Enter Sex</label>
+                                    <label class="sex-choice-label">
+                                        <input id="sex" name="sex" class="sex-choice" type="radio" value="male" required>Male
+                                    </label>
+                                    <label class="sex-choice-label">
+                                        <input name="sex" class="sex-choice" type="radio" value="female" required>Female
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +91,7 @@
                 <tr>
                     <td colspan="2" class="input-border">
                         <div class="input-frame civil-frame">
-                            <label for="civil-status" class="centered-row">Enter Civil Status</label>
+                            <label for="civil-status" class="centered-row input-title">Enter Civil Status</label>
                             <select name="civil-status" id="civil-status" class="input-field" required>
                                 <option value="" disabled selected>Select Civil Status</option>
                                 <option value="single">Single</option>

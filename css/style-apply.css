@@ -84,7 +84,7 @@ label[for="contact"], label[for="submit"] {
 }
 
 .form-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -139,26 +139,85 @@ label {
     margin-left: 5px;
 }
 
-/* Input field styles */
+/* Input styles */
+input[type="radio"] {
+    font-size: 1.25rem;
+}
+
+input[type="text"] {
+    font-size: 1.25rem;
+}
+
+input[type="email"] {
+    font-size: 1.25rem;
+}
+
+input[type="number"] {
+    font-size: 1.25rem;
+}
+
+.input-title {
+    font-size: 1.25rem;
+}
+
+.sex-choice-label {
+    font-size: 1.25rem;
+    margin-left: 10%;
+}
+
 .input-field {
     height: 100%;
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     box-sizing: border-box;
+    font-size: 1.25rem;
 }
 
-/* Radio button styles */
-input[type="radio"] {
-    margin-right: 5px;
+@media (max-width: 500px) {
+    input[type="radio"] {
+        font-size: 1rem;
+    }
+    
+    input[type="text"] {
+        font-size: 1rem;
+    }
+    
+    input[type="email"] {
+        font-size: 1rem;
+    }
+    
+    input[type="number"] {
+        font-size: 1rem;
+    }
+    
+    .input-title {
+        font-size: 1rem;
+    }
+    
+    .sex-choice-label {
+        font-size: 1rem;
+        margin-left: 5%;
+    }
+    
+    .input-field {
+        height: 100%;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
 }
+
 
 /* Button styles */
 .input-button {
     padding: 10px 20px;
-    border: 0px solid white;
     border: 5px solid #F0F0E5;
     border-radius: 100px;
     background-color: #002652;
