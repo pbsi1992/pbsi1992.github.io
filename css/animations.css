@@ -21,3 +21,26 @@
     transform: translateY(0);
     opacity: 1;
 }
+
+/* Fade and slide animations for cards */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { transform: translateY(50px); }
+    to { transform: translateY(0); }
+}
+
+.profile-card.portrait {
+    animation: fade-in 1s ease;
+}
+
+.profile-card.landscape {
+    animation: slide-up 1s ease;
+}
+
+.profile-card.hidden {
+    animation: fade-out 1s ease;
+}

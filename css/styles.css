@@ -414,11 +414,7 @@ body {
     }
 }
 
-/* Profile Card Section */
-.profile-card {
-    padding: 1rem;
-}
-
+/* Profile Card */
 .profile-border {
     background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
     border-radius: 50px;
@@ -594,6 +590,128 @@ body {
         font-size: 1rem;
     }
 }
+
+/* Faculty Profile card */
+.faculty-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin: 10px;
+}
+
+.profile-pic {
+    width: 90%;
+    height: 20rem;
+    border-radius: 30px;
+    object-fit: cover;
+    border: 5px solid #002652;
+    display: block;
+    margin: 0 auto;
+}
+
+.portrait {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portrait-name {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+    background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.landscape {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    min-width: 92.5%;
+}
+
+.profile-border-portrait {
+    background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
+    border-radius: 50px;
+    padding: 0.7rem;
+    margin: 10px auto;
+    width: 92.5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    max-width: 500px;
+}
+
+.profile-frame-portrait {
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Hover effects */
+.profile-card.portrait:hover {
+    transform: scale(1.05);
+}
+
+/* Button styling */
+.view-details {
+    padding: 10px 15px;
+    background-color: #0055b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.view-details:hover {
+    background-color: #003366;
+}
+
+.back-to-portrait {
+    width: 50%;
+    min-width: 100px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: #0055b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.back-to-portrait:hover {
+    background-color: #003366;
+}
+
 
 /* Footer */
 .footer {
