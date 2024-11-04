@@ -140,30 +140,6 @@ label {
 }
 
 /* Input styles */
-input[type="radio"] {
-    font-size: 1.25rem;
-}
-
-input[type="text"] {
-    font-size: 1.25rem;
-}
-
-input[type="email"] {
-    font-size: 1.25rem;
-}
-
-input[type="number"] {
-    font-size: 1.25rem;
-}
-
-.input-title {
-    font-size: 1.25rem;
-}
-
-.sex-choice-label {
-    font-size: 1.25rem;
-    margin-left: 10%;
-}
 
 .input-field {
     height: 100%;
@@ -176,40 +152,23 @@ input[type="number"] {
     font-size: 1.25rem;
 }
 
+input[type="radio"],
+input[type="text"],
+input[type="email"],
+input[type="number"],
+.input-title,
+.sex-choice-label {
+    font-size: 1.25rem;
+}
+
 @media (max-width: 500px) {
-    input[type="radio"] {
-        font-size: 1rem;
-    }
-    
-    input[type="text"] {
-        font-size: 1rem;
-    }
-    
-    input[type="email"] {
-        font-size: 1rem;
-    }
-    
-    input[type="number"] {
-        font-size: 1rem;
-    }
-    
-    .input-title {
-        font-size: 1rem;
-    }
-    
-    .sex-choice-label {
-        font-size: 1rem;
-        margin-left: 5%;
-    }
-    
+    input[type="radio"],
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    .input-title,
+    .sex-choice-label,
     .input-field {
-        height: 100%;
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        box-sizing: border-box;
         font-size: 1rem;
     }
 }
