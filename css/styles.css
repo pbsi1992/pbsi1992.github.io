@@ -792,3 +792,26 @@ body {
         gap: 2rem;
     }
 }
+
+/* Responsive styles for Statement of Faith section */
+@media (max-width: 768px) {
+    .solas-section {
+        padding: 2rem 1rem;
+    }
+
+    .solas-description p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .solas-section {
+        padding: 1rem 0.5rem;
+    }
+
+    .solas-description p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+}
