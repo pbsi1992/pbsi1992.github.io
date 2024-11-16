@@ -83,6 +83,10 @@ header a {
     transition: background 0.75s ease-out; 
 }
 
+.open-sidebar-button {
+    margin: 10px;
+}
+
 @media(max-width: 1100px) {
     .links-container {
         display: block;
