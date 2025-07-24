@@ -815,3 +815,12 @@ body {
         padding: 0 0.5rem;
     }
 }
+
+.calendar-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
