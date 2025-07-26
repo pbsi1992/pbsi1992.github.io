@@ -278,13 +278,13 @@ body {
     }
 }
 
-/* Programs Section *//* Mission Section */
-.programs-section, .mission-section {
+/* Programs Section *//* Mission Section *//* Calendar Section */
+.programs-section, .mission-section, .calendar-section {
     padding: 5%;
     background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
 }
 
-.programs-container, .mission-container {
+.programs-container, .mission-container, .calendar-container {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -323,7 +323,7 @@ body {
     justify-content: center;
 }
 
-.program-card, .mission-card {
+.program-card, .mission-card, .calendar-card {
     background-color: #fff;
     padding: 1rem;
     padding-top: 0;
