@@ -201,18 +201,18 @@ body {
 }
 
 /* Intro Section *//* Vision Section */
-.intro-section, .vision-section, .SOF-intro-section, .solas-section, .program-section {
+.intro-section, .vision-section, .SOF-intro-section, .solas-section, .program-section, .methods-section {
     padding: 4rem;
     text-align: center;
 }
 
-.intro-title, .intro-title2, .vision-title, .solas-title {
+.intro-title, .intro-title2, .vision-title, .solas-title, .methods-title {
     font-size: 3rem;
     margin: 0;
     color: rgba(46, 46, 46, 1);
 }
 
-.intro-title2, .vision-title, .SOF-intro-title, .solas-title, .program-title {
+.intro-title2, .vision-title, .SOF-intro-title, .solas-title, .program-title, .methods-title {
     margin-bottom: 1rem;
     background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
     background-clip: text;
@@ -226,12 +226,12 @@ body {
     padding: 0;
 }
 
-.intro-list, .vision-description, .solas-description {
+.intro-list, .vision-description, .solas-description, .methods-description {
     list-style: none;
     padding: 0 15%;
 }
 
-.solas-description {
+.solas-description, .methods-description {
     padding: 0 5%;
     text-align: justify;
 }
@@ -240,10 +240,14 @@ body {
     text-align: left;
 }
 
-.intro-list li, .vision-description p, .solas-description p {
+.intro-list li, .vision-description p, .solas-description p, .methods-description p {
     margin: 0.5rem 0;
     color: rgba(46, 46, 46, 1);
     font-size: 1.5rem;
+}
+
+.methods-description {
+    margin-top: 1rem;
 }
 
 @media (max-width: 991px) {
@@ -279,17 +283,17 @@ body {
 }
 
 /* Programs Section *//* Mission Section *//* Calendar Section */
-.programs-section, .mission-section, .calendar-section {
+.programs-section, .mission-section, .calendar-section, .goal-section {
     padding: 5%;
     background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
 }
 
-.programs-container, .mission-container, .calendar-container {
+.programs-container, .mission-container, .calendar-container, .goal-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.programs-title, .mission-title, .SOF-title {
+.programs-title, .mission-title, .SOF-title, .goal-title {
     text-align: center;
     font-size: 3rem;
     color: #fff;
@@ -298,7 +302,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.mission-title, .SOF-title {
+.mission-title, .SOF-title, .goal-title {
     padding-top: 1rem;
     margin-bottom: 1rem;
     background-image: linear-gradient(90deg, #002652 0%, #0055b8 100%);
@@ -307,7 +311,7 @@ body {
     color: transparent;
 }
 
-.SOF-title {
+.SOF-title, .goal-title, .methods-title {
     font-size: 2rem;
     margin-bottom: 0;
 }
@@ -323,7 +327,7 @@ body {
     justify-content: center;
 }
 
-.program-card, .mission-card, .calendar-card {
+.program-card, .mission-card, .calendar-card, .goal-card {
     background-color: #fff;
     padding: 1rem;
     padding-top: 0;
@@ -796,22 +800,22 @@ body {
 
 /* Responsive styles for Statement of Faith section */
 @media (max-width: 768px) {
-    .solas-section {
+    .solas-section, .methods-section {
         padding: 2rem 1rem;
     }
 
-    .solas-description p {
+    .solas-description p, .methods-description p {
         font-size: 1rem;
         padding: 0 1rem;
     }
 }
 
 @media (max-width: 550px) {
-    .solas-section {
+    .solas-section, .methods-section {
         padding: 1rem 0.5rem;
     }
 
-    .solas-description p {
+    .solas-description p, .methods-description p {
         font-size: 1rem;
         padding: 0 0.5rem;
     }
@@ -829,4 +833,18 @@ body {
 .center {
     display: flex;
     justify-self: center;
+}
+
+.mission-description {
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+.program-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.program-link:hover {
+    text-decoration: underline;
 }
