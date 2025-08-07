@@ -252,11 +252,8 @@ body {
 
 @media (max-width: 991px) {
     .intro-list {
-        padding: 0 10%;
-    }
-
-    .intro-list {
-        padding: 0 5%;
+        padding: 0;
+        margin: 0;
     }
 }
 
