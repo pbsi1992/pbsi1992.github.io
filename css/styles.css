@@ -845,3 +845,7 @@ body {
 .program-link:hover {
     text-decoration: underline;
 }
+
+.section-subject {
+    padding: 2rem;
+}
