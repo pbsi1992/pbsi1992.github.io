@@ -8,6 +8,23 @@ body {
     background-color: #F0F0E5;
 }
 
+p, .program-link {
+    color: rgba(46, 46, 46, 1);
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    p, .program-link {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    p, .program-link {
+        font-size: 0.9rem;
+    }
+}
+
 /* Navigation Bar */
 .nav-bar {
     display: flex;
@@ -162,6 +179,7 @@ body {
     font-size: 2rem;
     margin: 0;
     padding: 0 5%;
+    color: white;
 }
 
 @media (max-width: 7000px) {
@@ -493,6 +511,8 @@ body {
     object-fit: cover;
     border: 5px solid #002652;
     border-radius: 30px;
+    max-width: 400px;
+    max-height: 600px;
 }
 
 .profile-info {
@@ -849,3 +869,4 @@ body {
 .section-subject {
     padding: 2rem;
 }
+
