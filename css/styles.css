@@ -8,9 +8,13 @@ body {
     background-color: #F0F0E5;
 }
 
-p, .program-link {
+p, .program-link{
     color: rgba(46, 46, 46, 1);
     font-size: 1.25rem;
+}
+
+.footer p, .footer a {
+    color: white;
 }
 
 @media (max-width: 768px) {
