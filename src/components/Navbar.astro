@@ -1,0 +1,44 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Courses', href: '/courses' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Contact', href: '/contact' }
+];
+---
+<header class="sticky top-0 z-50 w-full px-4 md:px-10 pt-5">
+  <nav class="max-w-[1516px] mx-auto bg-site-card/80 backdrop-blur-md border border-site-border rounded-[16px] px-6 py-3.5 flex items-center justify-between shadow-xl shadow-black/5">
+    <div class="flex items-center gap-12">
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <img 
+          src="/logo.png" 
+          alt="PBSI Logo" 
+          class="w-12 h-12 object-contain"
+        />
+        <span class="hidden sm:block font-bold text-xl text-site-text tracking-tighter">
+          PBSI
+        </span>
+      </a>
+      
+      <div class="hidden lg:flex items-center gap-2">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-[15px] font-medium text-site-text px-4 py-2 hover:bg-site-bg rounded-lg transition-all">
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 md:gap-4">
+      <ThemeToggle />
+      <div class="h-6 w-px bg-site-border mx-1"></div>
+      <a href="/signup" class="hidden sm:block text-[15px] font-semibold text-site-text hover:text-primary transition-colors">Sign Up</a>
+      <button class="bg-primary text-white px-7 py-3 rounded-xl font-bold text-[15px] hover:brightness-110 transition-all shadow-md">
+        Login
+      </button>
+    </div>
+  </nav>
+</header>

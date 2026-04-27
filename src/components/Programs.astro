@@ -1,0 +1,88 @@
+---
+const programs = [
+  {
+    category: "Graduate",
+    title: "MA in Pastoral Studies",
+    duration: "2 Years",
+    description: "Advanced theological training for experienced practitioners seeking deeper academic and pastoral mastery.",
+    icon: "🎓"
+  },
+  {
+    category: "Undergraduate",
+    title: "Bachelor of Theology",
+    duration: "3 Years",
+    description: "A comprehensive foundation in biblical languages, systematic theology, and historical perspectives.",
+    icon: "📖"
+  },
+  {
+    category: "Undergraduate",
+    title: "Bachelor in Church Ministry",
+    duration: "3 Years",
+    description: "Practical preparation for effective church leadership, counseling, and community engagement.",
+    icon: "⛪"
+  },
+  {
+    category: "Special Program",
+    title: "Diploma in Theological Studies",
+    duration: "1 Year",
+    description: "Focused theological education for those seeking formal training without a full degree commitment.",
+    icon: "📜"
+  },
+  {
+    category: "Special Program",
+    title: "Lay Leadership Studies",
+    duration: "1 Year",
+    description: "Equipping church members and officers with essential skills for effective local church service.",
+    icon: "🤝"
+  }
+];
+---
+
+<section class="max-w-[1596px] mx-auto px-4 md:px-10 py-24">
+  <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+    <div class="max-w-2xl">
+      <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Academic Excellence</h2>
+      <h3 class="text-4xl md:text-5xl font-extrabold text-site-text leading-tight">
+        Programs Offered:
+      </h3>
+    </div>
+    <p class="text-site-muted text-lg max-w-md pb-1">
+      Explore our specialized tracks designed to equip you for global ministry and leadership.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {programs.map((program) => (
+      <div class="group bg-site-card border border-site-border p-8 rounded-[32px] hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-primary/10">
+        <div class="flex justify-between items-start mb-8">
+          <div class="text-4xl bg-site-bg w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500">
+            {program.icon}
+          </div>
+          <span class="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+            {program.category}
+          </span>
+        </div>
+        
+        <h4 class="text-2xl font-bold text-site-text mb-3 group-hover:text-primary transition-colors">
+          {program.title}
+        </h4>
+        
+        <div class="flex items-center gap-2 mb-4">
+           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-site-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+           <span class="text-xs font-semibold text-site-muted uppercase tracking-wider">{program.duration}</span>
+        </div>
+        
+        <p class="text-site-muted leading-relaxed mb-8 text-base line-clamp-3">
+          {program.description}
+        </p>
+
+        <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all">
+          Explore Program
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14m-7-7 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
