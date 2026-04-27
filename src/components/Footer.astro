@@ -1,0 +1,86 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-site-card border-t border-site-border mt-20 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-20 pointer-events-none"></div>
+
+  <div class="max-w-[1200px] mx-auto px-4 md:px-10 py-16 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+      
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-site-text leading-tight">
+            Presbyterian Bible <br class="hidden md:block"/> Seminary Inc.
+          </h2>
+          <div class="h-1 w-12 bg-primary mt-4"></div>
+        </div>
+        <p class="text-site-muted text-sm leading-relaxed max-w-md">
+          Committed to Reformed Biblical Doctrine and Traditions, promoting excellence in Spirituality, Character, Practical Ministry, and Academics.
+        </p>
+      </div>
+
+      <div class="lg:col-span-4 space-y-6">
+        <h3 class="text-xs font-black uppercase tracking-widest text-primary">Our Campuses</h3>
+        
+        <div class="space-y-4">
+          <div class="flex gap-3">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold text-primary uppercase mb-1">Main Campus</p>
+              <p class="text-xs text-site-text leading-relaxed"># 3-5 General Ricarte St. Kalayaan Subdivision<br/>2009 Angeles City, Philippines</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold text-primary uppercase mb-1">Annex Campus</p>
+              <p class="text-xs text-site-text leading-relaxed">Jesus The Great King Presbyterian Church, Joven St.,<br/>Brgy Babo Sacan, Porac, Pampanga, Philippines</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 space-y-6">
+        <h3 class="text-xs font-black uppercase tracking-widest text-primary">Contact Details</h3>
+        
+        <div class="space-y-4">
+          <div>
+            <p class="text-[10px] font-bold text-site-muted uppercase mb-1">Email Inquiry</p>
+            <a href="mailto:jkisinamal@yahoo.com" class="text-sm font-semibold text-site-text hover:text-primary transition-colors decoration-primary/30 underline underline-offset-4">jkisinamal@yahoo.com</a>
+          </div>
+
+          <div class="space-y-2">
+            <p class="text-[10px] font-bold text-site-muted uppercase">Phone Lines</p>
+            <div class="flex flex-col gap-1">
+              <div class="flex justify-between items-center text-xs border-b border-site-border pb-1">
+                <span class="text-site-muted">President</span>
+                <span class="font-bold text-site-text">0950 336 8754</span>
+              </div>
+              <div class="flex justify-between items-center text-xs pt-1">
+                <span class="text-site-muted">Registrar</span>
+                <span class="font-bold text-site-text">0998 195 2398</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-site-border flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-[10px] font-bold text-site-muted uppercase tracking-widest">
+        &copy; {currentYear} Presbyterian Bible Seminary Inc. All Rights Reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="#" class="text-[10px] font-bold text-primary uppercase hover:opacity-70 transition-opacity">Privacy Policy</a>
+        <a href="#" class="text-[10px] font-bold text-primary uppercase hover:opacity-70 transition-opacity">Academic Portal</a>
+      </div>
+    </div>
+  </div>
+</footer>

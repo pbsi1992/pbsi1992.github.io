@@ -1,20 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Banner from '../components/Banner.astro';
-import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Excellence from '../components/Excellence.astro';
 import Programs from '../components/Programs.astro';
+import Accreditations from '../components/Accreditations.astro';
+import PresidentLetter from '../components/PresidentLetter.astro';
 ---
 
 <Layout title="Home">
-  <Banner />
-  <div class="relative">
-    <Navbar />
-    <main>
-      <Hero />
-      <Excellence />
-      <Programs />
-    </main>
-  </div>
+  <main>
+    <Hero />
+    <Excellence />
+    <Programs />
+    <Accreditations />
+    <PresidentLetter />
+  </main>
 </Layout>

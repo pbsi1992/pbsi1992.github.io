@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import pabatsLogo from '../assets/pabats-logo.png';
+import ahcsLogo from '../assets/ahcs-logo.png';
+
+const accreditations = [
+  {
+    title: "PABATS",
+    fullName: "Philippine Association of Bible and Theological Schools",
+    status: "Associate Member",
+    logo: pabatsLogo,
+    description: "Committed to maintaining high standards of theological education within the Philippine context."
+  },
+  {
+    title: "Partnership",
+    fullName: "Asia Harvesters College and Seminary",
+    status: "Academic Partner",
+    logo: ahcsLogo,
+    description: "Collaborating to expand global reach and provide diverse biblical training opportunities."
+  }
+];
+---
+
+<section class="py-24 relative overflow-hidden bg-site-bg">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-[1596px] mx-auto px-4 md:px-10">
+    <div class="text-center mb-16">
+      <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Recognitions & Alliances</h2>
+      <p class="text-4xl md:text-5xl font-extrabold text-site-text tracking-tight">Accreditations & Partnerships</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {accreditations.map((item) => (
+        <div class="group relative bg-site-card/40 backdrop-blur-md border border-site-border p-8 md:p-10 rounded-[32px] transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 mb-8 relative flex items-center justify-center">
+              <div class="absolute inset-0 bg-primary/5 rounded-2xl blur-xl group-hover:bg-primary/10 transition-colors"></div>
+              <Image 
+                src={item.logo} 
+                alt={item.fullName} 
+                width={200}
+                height={200}
+                class="relative z-10 w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+
+            <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+              {item.status}
+            </span>
+            
+            <h3 class="text-xl md:text-2xl font-bold text-site-text mb-4 leading-tight">
+              {item.fullName}
+            </h3>
+            
+            <p class="text-site-muted leading-relaxed max-w-xs">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-site-muted italic">
+        PBSI is dedicated to continuous improvement and ecclesiastical excellence.
+      </p>
+    </div>
+  </div>
+</section>
