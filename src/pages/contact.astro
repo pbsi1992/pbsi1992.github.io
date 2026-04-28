@@ -13,28 +13,28 @@ const contactInfo = [
     
     <div class="max-w-[1200px] mx-auto px-6 relative z-10">
       
-      <div class="mb-20">
-        <h1 class="text-7xl md:text-9xl font-black text-site-text tracking-tighter uppercase italic leading-none">
+      <div class="mb-12 md:mb-20">
+        <h1 class="text-6xl sm:text-7xl md:text-9xl font-black text-site-text tracking-tighter uppercase italic leading-none">
           Contact<span class="text-primary text-outline">.</span>
         </h1>
       </div>
 
       <div class="flex flex-col lg:flex-row gap-10 items-stretch">
         
-        <div class="flex flex-col gap-6 shrink-0">
+        <div class="flex flex-col gap-6 shrink-0 w-full lg:w-auto">
           {contactInfo.map((item) => (
-            <div class="bg-site-card/40 backdrop-blur-md border border-site-border p-8 rounded-[32px] flex items-center gap-6 shadow-sm group hover:border-primary/40 transition-colors">
+            <div class="bg-site-card/40 backdrop-blur-md border border-site-border p-6 md:p-8 rounded-[32px] flex items-center gap-6 shadow-sm group hover:border-primary/40 transition-colors">
                <div class="bg-primary/10 text-primary p-4 rounded-2xl shrink-0 group-hover:scale-110 transition-transform">
                  <item.icon size={28} />
                </div>
-               <div class="pr-8">
+               <div class="pr-4 md:pr-8 overflow-hidden">
                  <p class="text-[10px] font-black tracking-[0.3em] text-site-muted mb-1 uppercase">{item.label}</p>
-                 <p class="text-lg font-bold text-site-text">{item.value}</p>
+                 <p class="text-base md:text-lg font-bold text-site-text break-all sm:break-normal">{item.value}</p>
                </div>
             </div>
           ))}
 
-          <div class="bg-primary text-white p-10 rounded-[32px] shadow-xl shadow-primary/20 flex-grow relative overflow-hidden">
+          <div class="bg-primary text-white p-8 md:p-10 rounded-[32px] shadow-xl shadow-primary/20 flex-grow relative overflow-hidden">
             <div class="relative z-10">
                 <div class="flex items-center gap-2 mb-8 opacity-70">
                     <Clock size={18} />
@@ -43,8 +43,8 @@ const contactInfo = [
                 
                 <div class="space-y-6">
                     <div>
-                        <h4 class="text-4xl font-black italic uppercase leading-none mb-1">Mon — Fri</h4>
-                        <p class="text-xl font-bold opacity-90 text-white/90">8:00 AM — 5:00 PM</p>
+                        <h4 class="text-3xl md:text-4xl font-black italic uppercase leading-none mb-1">Mon — Fri</h4>
+                        <p class="text-lg md:text-xl font-bold opacity-90 text-white/90">8:00 AM — 5:00 PM</p>
                     </div>
                     
                     <div class="pt-4 border-t border-white/10">
@@ -62,20 +62,20 @@ const contactInfo = [
           </div>
         </div>
 
-        <div class="flex-1 min-w-0 lg:min-w-[650px] bg-site-card/40 backdrop-blur-xl border border-site-border p-10 md:p-16 rounded-[40px] shadow-2xl shadow-black/5">
+        <div class="flex-1 min-w-0 bg-site-card/40 backdrop-blur-xl border border-site-border p-8 md:p-16 rounded-[40px] shadow-2xl shadow-black/5">
             <div class="mb-12">
-                <h3 class="text-5xl md:text-7xl font-black text-site-text italic uppercase tracking-tighter leading-[0.8]">
+                <h3 class="text-4xl md:text-7xl font-black text-site-text italic uppercase tracking-tighter leading-[0.8]">
                     Send a <br /> Message
                 </h3>
-                <div class="w-24 h-2 bg-primary mt-8 rounded-full"></div>
+                <div class="w-20 md:w-24 h-2 bg-primary mt-8 rounded-full"></div>
             </div>
 
-            <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-8">
+            <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6 md:gap-8">
                 <input type="hidden" name="access_key" value="3e0eb43a-715e-4a1f-ab43-6b729196b441">
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <input type="hidden" name="subject" value="New Contact Inquiry - PBSI">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div class="flex flex-col gap-3">
                         <label class="text-[11px] font-black uppercase tracking-[0.2em] text-primary ml-1">Full Name</label>
                         <input 
@@ -83,7 +83,7 @@ const contactInfo = [
                             name="name"
                             required
                             placeholder="Juan Dela Cruz"
-                            class="bg-site-bg/60 border border-site-border rounded-2xl px-6 py-5 text-site-text font-bold focus:border-primary outline-none transition-all placeholder:opacity-20"
+                            class="w-full bg-site-bg/60 border border-site-border rounded-2xl px-6 py-4 md:py-5 text-site-text font-bold focus:border-primary outline-none transition-all placeholder:opacity-20"
                         />
                     </div>
                     <div class="flex flex-col gap-3">
@@ -93,7 +93,7 @@ const contactInfo = [
                             name="email"
                             required
                             placeholder="juan@email.com"
-                            class="bg-site-bg/60 border border-site-border rounded-2xl px-6 py-5 text-site-text font-bold focus:border-primary outline-none transition-all placeholder:opacity-20"
+                            class="w-full bg-site-bg/60 border border-site-border rounded-2xl px-6 py-4 md:py-5 text-site-text font-bold focus:border-primary outline-none transition-all placeholder:opacity-20"
                         />
                     </div>
                 </div>
@@ -105,12 +105,12 @@ const contactInfo = [
                         required
                         rows="5" 
                         placeholder="How can we help you?"
-                        class="bg-site-bg/60 border border-site-border rounded-2xl px-6 py-5 text-site-text font-bold focus:border-primary outline-none transition-all resize-none placeholder:opacity-20"
+                        class="w-full bg-site-bg/60 border border-site-border rounded-2xl px-6 py-4 md:py-5 text-site-text font-bold focus:border-primary outline-none transition-all resize-none placeholder:opacity-20"
                     ></textarea>
                 </div>
 
-                <div class="pt-8 flex justify-center">
-                    <button type="submit" class="bg-primary text-white px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-4 hover:shadow-[0_20px_50px_rgba(var(--primary-rgb),0.4)] transition-all hover:-translate-y-2 active:scale-95 group uppercase italic tracking-tight">
+                <div class="pt-4 md:pt-8 flex justify-center md:justify-start">
+                    <button type="submit" class="w-full md:w-auto bg-primary text-white px-12 py-5 md:py-6 rounded-2xl font-black text-lg md:text-xl flex items-center justify-center gap-4 hover:shadow-[0_20px_50px_rgba(var(--primary-rgb),0.4)] transition-all hover:-translate-y-1 active:scale-95 group uppercase italic tracking-tight">
                         Submit Inquiry
                         <Send size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </button>
@@ -125,7 +125,14 @@ const contactInfo = [
 
 <style>
   .text-outline {
-    -webkit-text-stroke: 2px currentColor;
+    -webkit-text-stroke: 1.5px currentColor;
+  }
+  @media (min-width: 768px) {
+    .text-outline {
+      -webkit-text-stroke: 2px currentColor;
+    }
+  }
+  .text-outline {
     color: transparent;
   }
 </style>

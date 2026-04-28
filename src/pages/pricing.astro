@@ -40,33 +40,33 @@ const feeBrackets = [
   <main class="bg-site-bg min-h-screen pt-12 pb-24">
     <div class="max-w-[1200px] mx-auto px-6">
       
-      <div class="mb-20 max-w-3xl">
-        <h1 class="text-6xl md:text-8xl font-black text-site-text tracking-tighter mb-6 leading-[0.9]">
+      <div class="mb-12 md:mb-20 max-w-3xl">
+        <h1 class="text-4xl sm:text-6xl md:text-8xl font-black text-site-text tracking-tighter mb-6 leading-[0.9]">
           Financial <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Transparency</span>
         </h1>
-        <p class="text-site-muted font-bold text-xl md:text-2xl leading-relaxed italic">
+        <p class="text-site-muted font-bold text-lg md:text-2xl leading-relaxed italic">
           Tuition-free theological education for the glory of God. 
-          <span class="block text-sm font-medium not-italic mt-2 opacity-70 uppercase tracking-widest text-primary">Zero Tuition. Full Calling.</span>
+          <span class="block text-xs md:text-sm font-medium not-italic mt-2 opacity-70 uppercase tracking-widest text-primary">Zero Tuition. Full Calling.</span>
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mb-20">
         {feeBrackets.map((bracket) => (
-          <div class="bg-site-card border border-site-border rounded-[40px] p-10 flex flex-col justify-between hover:border-primary/40 transition-all duration-500 shadow-xl shadow-black/5 w-full">
+          <div class="bg-site-card border border-site-border rounded-[32px] md:rounded-[40px] p-8 md:p-10 flex flex-col justify-between hover:border-primary/40 transition-all duration-500 shadow-xl shadow-black/5 w-full">
             <div>
-              <div class="mb-10">
+              <div class="mb-8 md:mb-10">
                 <h3 class="text-2xl md:text-3xl font-black text-site-text leading-tight mb-2 uppercase tracking-tighter italic">{bracket.type}</h3>
                 <p class="text-[10px] font-black text-primary uppercase tracking-[0.3em]">{bracket.note}</p>
               </div>
 
-              <div class="space-y-4 mb-10">
+              <div class="space-y-4 mb-8 md:mb-10">
                 <div class="flex justify-between items-center py-4 border-b border-site-border/60">
                   <span class="text-site-muted font-bold text-sm">Tuition Fee</span>
-                  <span class="text-primary font-black uppercase tracking-tighter text-base italic">100% Free</span>
+                  <span class="text-primary font-black uppercase tracking-tighter text-sm md:text-base italic">100% Free</span>
                 </div>
                 <div class="flex justify-between items-center py-4 border-b border-site-border/60">
                   <span class="text-site-muted font-bold text-sm">Semestral Fees</span>
-                  <span class="text-site-text font-black text-3xl tracking-tight">₱{bracket.price}</span>
+                  <span class="text-site-text font-black text-2xl md:text-3xl tracking-tight">₱{bracket.price}</span>
                 </div>
               </div>
 
@@ -93,10 +93,10 @@ const feeBrackets = [
         ))}
       </div>
 
-      <div class="bg-primary text-white rounded-[40px] p-12 relative overflow-hidden shadow-2xl shadow-primary/20 mb-20">
+      <div class="bg-primary text-white rounded-[32px] md:rounded-[40px] p-8 md:p-12 relative overflow-hidden shadow-2xl shadow-primary/20 mb-20">
           <div class="relative z-10 max-w-4xl">
-              <h4 class="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-6 uppercase italic">Scholarship Foundation</h4>
-              <p class="text-xl md:text-2xl text-white/90 leading-relaxed font-semibold italic border-l-4 border-white/30 pl-8">
+              <h4 class="text-2xl md:text-5xl font-black tracking-tight leading-tight mb-6 uppercase italic">Scholarship Foundation</h4>
+              <p class="text-lg md:text-2xl text-white/90 leading-relaxed font-semibold italic border-l-4 border-white/30 pl-4 md:pl-8">
                   "Through the support of the Presbyterian Church and generous partners, we maintain a 0-tuition policy to ensure ministers are trained without the financial burden."
               </p>
           </div>
@@ -104,28 +104,28 @@ const feeBrackets = [
           <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary-light/20 rounded-full blur-2xl"></div>
       </div>
 
-      <div class="mb-24 overflow-hidden bg-site-card border border-site-border rounded-[40px] shadow-sm">
-        <div class="p-8 border-b border-site-border bg-site-bg/30">
+      <div class="mb-24 overflow-hidden bg-site-card border border-site-border rounded-[32px] md:rounded-[40px] shadow-sm">
+        <div class="p-6 md:p-8 border-b border-site-border bg-site-bg/30">
             <h2 class="text-[10px] font-black text-primary uppercase tracking-[0.4em]">Official Fee Schedule</h2>
         </div>
         <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse min-w-[700px]">
+            <table class="w-full text-left border-collapse min-w-[600px]">
             <thead>
                 <tr class="bg-site-bg/20">
-                <th class="p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em]">Program Tier</th>
-                <th class="p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Tuition Cost</th>
-                <th class="p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Total Fees</th>
+                <th class="p-6 md:p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em]">Program Tier</th>
+                <th class="p-6 md:p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Tuition Cost</th>
+                <th class="p-6 md:p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Total Fees</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-site-border">
                 {feeBrackets.map((b) => (
                   <tr class="hover:bg-primary/[0.02] transition-colors">
-                    <td class="p-8">
-                      <span class="block text-base font-bold text-site-text">{b.type}</span>
-                      <span class="text-xs text-site-muted font-medium">{b.includes.join(", ")}</span>
+                    <td class="p-6 md:p-8">
+                      <span class="block text-sm md:text-base font-bold text-site-text">{b.type}</span>
+                      <span class="text-[11px] md:text-xs text-site-muted font-medium">{b.includes.join(", ")}</span>
                     </td>
-                    <td class="p-8 text-base font-black text-primary text-center italic">₱0.00</td>
-                    <td class="p-8 text-3xl font-black text-site-text text-center tracking-tighter">₱{b.price}</td>
+                    <td class="p-6 md:p-8 text-sm md:text-base font-black text-primary text-center italic">₱0.00</td>
+                    <td class="p-6 md:p-8 text-xl md:text-3xl font-black text-site-text text-center tracking-tighter">₱{b.price}</td>
                   </tr>
                 ))}
             </tbody>
@@ -133,16 +133,16 @@ const feeBrackets = [
         </div>
       </div>
 
-      <div class="relative py-20 px-10 bg-site-card border border-site-border rounded-[40px] text-center overflow-hidden">
-         <div class="relative z-10">
-            <h3 class="text-4xl font-black text-site-text mb-4 tracking-tighter">Ready to pursue your calling?</h3>
-            <p class="text-site-muted font-medium mb-10 max-w-xl mx-auto text-lg">Join a community of believers dedicated to biblical truth and academic excellence.</p>
-            <a href="/admission" class="inline-flex items-center gap-3 bg-primary text-white px-12 py-6 rounded-2xl font-black text-xl hover:shadow-2xl hover:shadow-primary/40 transition-all hover:-translate-y-2 active:scale-95 group">
-                Begin Admission Process
+      <div class="relative py-12 md:py-20 px-6 md:px-10 bg-site-card border border-site-border rounded-[32px] md:rounded-[40px] text-center overflow-hidden">
+          <div class="relative z-10">
+            <h3 class="text-2xl md:text-4xl font-black text-site-text mb-4 tracking-tighter">Ready to pursue your calling?</h3>
+            <p class="text-site-muted font-medium mb-10 max-w-xl mx-auto text-base md:text-lg">Join a community of believers dedicated to biblical truth and academic excellence.</p>
+            <a href="/admission" class="inline-flex w-full md:w-auto items-center justify-center gap-3 bg-primary text-white px-8 md:px-12 py-5 md:py-6 rounded-2xl font-black text-lg md:text-xl hover:shadow-2xl hover:shadow-primary/40 transition-all hover:-translate-y-2 active:scale-95 group uppercase italic">
+                Begin Admission
                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </a>
-         </div>
-         <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-50"></div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-50"></div>
       </div>
     </div>
   </main>
