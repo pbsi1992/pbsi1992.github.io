@@ -1,13 +1,18 @@
 ---
 import { Plus } from 'lucide-react';
 
+interface Education {
+  degree: string;
+  school?: string; // Changed to optional to match your data
+}
+
 interface Props {
   id: string;
   name: string;
   role: string;
   image: string;
   degrees: string[];
-  education: { degree: string, school: string }[];
+  education: Education[];
   specialization: string;
   titles: string;
 }
@@ -17,7 +22,11 @@ const { id, name, role, image, degrees, education, specialization, titles } = As
 
 <div class="bg-site-card border border-site-border rounded-[32px] overflow-hidden group hover:border-primary/20 transition-all duration-500 flex flex-col h-full">
   <div class="aspect-[4/5] overflow-hidden bg-site-bg border-b border-site-border">
-    <img src={image} alt={name} class="w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105" />
+    <img 
+      src={image} 
+      alt={name} 
+      class="w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105" 
+    />
   </div>
 
   <div class="p-8 flex flex-col flex-grow">
@@ -46,11 +55,11 @@ const { id, name, role, image, degrees, education, specialization, titles } = As
 <template id={`data-${id}`}>
     <div class="space-y-8">
         <div class="flex flex-col md:flex-row gap-8 items-start">
-            <img src={image} class="w-32 h-32 rounded-2xl object-cover border border-site-border" />
+            <img src={image} class="w-32 h-32 rounded-2xl object-cover border border-site-border shadow-lg" />
             <div>
-                <h2 class="text-3xl font-black text-site-text">{name}</h2>
+                <h2 class="text-3xl font-black text-site-text leading-tight">{name}</h2>
                 <p class="text-primary font-bold uppercase tracking-widest text-xs mt-1">{role}</p>
-                <p class="text-site-muted italic text-sm mt-2">{titles}</p>
+                <p class="text-site-muted italic text-sm mt-2 leading-relaxed">{titles}</p>
             </div>
         </div>
         
@@ -58,17 +67,19 @@ const { id, name, role, image, degrees, education, specialization, titles } = As
             <h4 class="text-xs font-black text-primary uppercase tracking-[0.3em] border-b border-primary/10 pb-2">Academic Background</h4>
             <div class="grid gap-4">
                 {education.map(edu => (
-                    <div>
-                        <p class="font-bold text-site-text">{edu.degree}</p>
-                        <p class="text-sm text-site-muted italic">{edu.school}</p>
+                    <div class="group/edu">
+                        <p class="font-bold text-site-text leading-tight">{edu.degree}</p>
+                        {edu.school && <p class="text-sm text-site-muted italic mt-0.5">{edu.school}</p>}
                     </div>
                 ))}
             </div>
         </div>
 
-        <div class="pt-6 border-t border-site-border">
-            <h4 class="text-xs font-black text-primary uppercase tracking-[0.3em] mb-3">Focus & Expertise</h4>
-            <p class="text-site-muted leading-relaxed">{specialization}</p>
-        </div>
+        {specialization && (
+          <div class="pt-6 border-t border-site-border">
+              <h4 class="text-xs font-black text-primary uppercase tracking-[0.3em] mb-3">Focus & Expertise</h4>
+              <p class="text-site-muted leading-relaxed text-sm">{specialization}</p>
+          </div>
+        )}
     </div>
 </template>

@@ -31,13 +31,12 @@ const navLinks = [
     </div>
 
     <div class="flex items-center gap-2 md:gap-4">
-      {/* Ensure ThemeToggle is visible on mobile by removing hidden md:block */}
       <div class="flex items-center">
         <ThemeToggle />
       </div>
       
       <a 
-        href="/register" 
+        href="/admission" 
         class="hidden sm:inline-block bg-primary text-white px-7 py-3 rounded-xl font-bold text-[15px] hover:brightness-110 transition-all shadow-md"
       >
         Register
@@ -71,7 +70,7 @@ const navLinks = [
       ))}
       <div class="mt-4 pt-4 border-t border-site-border">
         <a 
-          href="/register" 
+          href="/admissions" 
           class="block w-full bg-primary text-white text-center py-5 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-all"
         >
           Register Now
@@ -82,7 +81,6 @@ const navLinks = [
 </header>
 
 <script>
-  // Function to initialize the menu logic
   function initNav() {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -95,13 +93,11 @@ const navLinks = [
       const isOpen = menuToggle.getAttribute('data-state') === 'open';
       
       if (!isOpen) {
-        // Open Menu
         menuToggle.setAttribute('data-state', 'open');
         mobileMenu.classList.remove('hidden');
         menuWrapper.classList.add('hidden');
         closeWrapper.classList.remove('hidden');
       } else {
-        // Close Menu
         menuToggle.setAttribute('data-state', 'closed');
         mobileMenu.classList.add('hidden');
         menuWrapper.classList.remove('hidden');
@@ -109,7 +105,6 @@ const navLinks = [
       }
     });
 
-    // Close on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.setAttribute('data-state', 'closed');
@@ -120,9 +115,6 @@ const navLinks = [
     });
   }
 
-  // Runs on initial load
   initNav();
-
-  // Re-runs if you are using Astro View Transitions
   document.addEventListener('astro:after-swap', initNav);
 </script>
