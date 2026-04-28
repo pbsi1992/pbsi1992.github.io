@@ -1,0 +1,74 @@
+---
+import { Plus } from 'lucide-react';
+
+interface Props {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  degrees: string[];
+  education: { degree: string, school: string }[];
+  specialization: string;
+  titles: string;
+}
+
+const { id, name, role, image, degrees, education, specialization, titles } = Astro.props;
+---
+
+<div class="bg-site-card border border-site-border rounded-[32px] overflow-hidden group hover:border-primary/20 transition-all duration-500 flex flex-col h-full">
+  <div class="aspect-[4/5] overflow-hidden bg-site-bg border-b border-site-border">
+    <img src={image} alt={name} class="w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105" />
+  </div>
+
+  <div class="p-8 flex flex-col flex-grow">
+    <span class="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">{role}</span>
+    <h3 class="text-2xl font-bold text-site-text mb-2 leading-tight">{name}</h3>
+    <p class="text-[11px] text-primary/60 font-bold uppercase tracking-wider mb-4 italic">{titles}</p>
+    
+    <div class="flex flex-wrap gap-2 mb-6">
+      {degrees.map(d => (
+        <span class="text-[9px] font-black text-site-muted bg-site-bg border border-site-border px-2 py-1 rounded-md uppercase">
+          {d}
+        </span>
+      ))}
+    </div>
+
+    <button 
+      data-faculty-btn={id}
+      class="mt-auto flex items-center justify-between w-full px-6 py-4 bg-primary/5 hover:bg-primary/10 border border-primary/10 rounded-2xl text-primary font-bold text-xs uppercase tracking-widest transition-all group/btn"
+    >
+      View Profile
+      <Plus size={16} className="transition-transform duration-300 group-hover/btn:rotate-90" />
+    </button>
+  </div>
+</div>
+
+<template id={`data-${id}`}>
+    <div class="space-y-8">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            <img src={image} class="w-32 h-32 rounded-2xl object-cover border border-site-border" />
+            <div>
+                <h2 class="text-3xl font-black text-site-text">{name}</h2>
+                <p class="text-primary font-bold uppercase tracking-widest text-xs mt-1">{role}</p>
+                <p class="text-site-muted italic text-sm mt-2">{titles}</p>
+            </div>
+        </div>
+        
+        <div class="space-y-4">
+            <h4 class="text-xs font-black text-primary uppercase tracking-[0.3em] border-b border-primary/10 pb-2">Academic Background</h4>
+            <div class="grid gap-4">
+                {education.map(edu => (
+                    <div>
+                        <p class="font-bold text-site-text">{edu.degree}</p>
+                        <p class="text-sm text-site-muted italic">{edu.school}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="pt-6 border-t border-site-border">
+            <h4 class="text-xs font-black text-primary uppercase tracking-[0.3em] mb-3">Focus & Expertise</h4>
+            <p class="text-site-muted leading-relaxed">{specialization}</p>
+        </div>
+    </div>
+</template>

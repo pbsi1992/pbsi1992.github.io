@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MissionVisionCard from '../components/MissionVisionCard.astro';
+import MaximSection from '../components/MaximSection.astro';
+import PillarCard from '../components/PillarCard.astro';
+import FacultyCard from '../components/FacultyCard.astro';
+
+// Import scalable faculty data
+import { facultyData } from '../data/faculty';
+
+import { 
+  Target, 
+  Eye, 
+  CheckCircle2, 
+  BookOpen, 
+  SquareStack, 
+  Heart, 
+  Flame, 
+  Road, 
+  PersonStanding, 
+  Church 
+} from 'lucide-react';
+
+const solas = ["Sola Scriptura", "Sola Fidei", "Sola Gratia", "Solus Cristus", "Soli Deo Gloria"];
+
+const vision = "To be a leading Reformed Christian institution in Central Luzon that proclaims the Gospel, ministers to the church, society, and God’s creation.";
+
+const missionPoints = [
+  "Provide quality and holistic Christian educational services at all levels.",
+  "Train men and women for the building-up of the church and transformation of society.",
+  "Serve as a catalyst for the expansion of God’s kingdom on earth."
+];
+
+const pillars = [
+  { title: "The Word", icon: BookOpen, desc: "The Scriptures as the inspired, inerrant Word of God and supreme authority for faith." },
+  { title: "The Trinity", icon: SquareStack, desc: "One God, eternally existing in three distinctive persons: Father, Son, and Holy Spirit." },
+  { title: "Jesus Christ", icon: Heart, desc: "True God and man; His substitutionary sacrifice and bodily resurrection." },
+  { title: "Holy Spirit", icon: Flame, desc: "The divine Comforter who indwells, guides, and empowers believers for global mission." },
+  { title: "Salvation", icon: Road, desc: "By grace through faith in the shed blood of Jesus Christ, not by works." },
+  { title: "Resurrection", icon: PersonStanding, desc: "The bodily resurrection of the just to eternal life and the unjust to condemnation." },
+  { title: "The Church", icon: Church, desc: "The Body of Christ commissioned to witness and fulfill the Great Commission." }
+];
+---
+
+<Layout title="About Us">
+  <main class="bg-site-bg min-h-screen relative">
+    
+    <section class="pt-12 pb-12">
+      <div class="max-w-[1200px] mx-auto px-6 text-center">
+        <h1 class="text-6xl md:text-8xl font-extrabold text-site-text mb-10 tracking-tighter">
+          Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Foundations</span>
+        </h1>
+        <div class="flex flex-wrap justify-center gap-3">
+          {solas.map(sola => (
+            <span class="px-5 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary font-bold text-xs uppercase tracking-widest">{sola}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 items-stretch">
+          <MissionVisionCard title="Our Vision" icon={Eye}>
+            <p class="text-2xl md:text-3xl font-bold text-site-text leading-[1.1] tracking-tight">{vision}</p>
+          </MissionVisionCard>
+
+          <MissionVisionCard title="Our Mission" icon={Target}>
+            <ul class="space-y-6">
+              {missionPoints.map(item => (
+                <li class="flex gap-4 text-site-muted font-medium italic text-xl leading-snug text-left">
+                  <CheckCircle2 size={22} className="text-primary shrink-0 mt-1" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </MissionVisionCard>
+        </div>
+      </div>
+    </section>
+
+    <MaximSection 
+      quote="Evangelization is a mandate... however, equipping the people of God to defend the BIBLICAL FAITH requires deep learning."
+      reference="Matthew 28:19-20"
+    />
+
+    <section class="py-20">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl md:text-6xl font-black text-site-text tracking-tighter mb-4">
+            7 Pillars of the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Biblical Faith</span>
+          </h2>
+          <div class="flex items-center justify-center gap-3">
+            <div class="h-[2px] w-12 bg-primary/20"></div>
+            <span class="text-primary font-bold uppercase tracking-[0.4em] text-[10px]">Statement of Faith</span>
+            <div class="h-[2px] w-12 bg-primary/20"></div>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 lg:px-20">
+          {pillars.map((p, i) => (
+            <div class={i === pillars.length - 1 ? "md:col-span-2 flex justify-center mt-4" : ""}>
+               <div class={i === pillars.length - 1 ? "md:w-1/2 w-full" : "w-full h-full"}>
+                  <PillarCard index={i} title={p.title} icon={p.icon}>
+                    {p.desc}
+                  </PillarCard>
+               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-site-card/10">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-6xl font-black text-site-text tracking-tighter mb-4">
+            Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Faculty</span>
+          </h2>
+          <p class="text-site-muted font-medium max-w-2xl mx-auto">
+            Equipped with academic excellence and spiritual maturity to guide the next generation of Christian leaders.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+          {facultyData.map(member => (
+            <FacultyCard {...member} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div id="faculty-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 bg-site-bg/90 backdrop-blur-xl">
+        <div class="bg-site-card border border-site-border w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[40px] p-8 md:p-12 relative shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+            <button id="close-modal" class="absolute top-8 right-8 text-site-muted hover:text-primary transition-all scale-100 hover:scale-110 active:scale-95 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+  </main>
+</Layout>
+
+<script>
+    const modal = document.getElementById('faculty-modal');
+    const content = document.getElementById('modal-content');
+    const closeBtn = document.getElementById('close-modal');
+    const buttons = document.querySelectorAll('[data-faculty-btn]');
+
+    const openModal = (id: string) => {
+        const template = document.getElementById(`data-${id}`);
+        if (template && modal && content) {
+            content.innerHTML = template.innerHTML;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    const closeModal = () => {
+        modal?.classList.add('hidden');
+        modal?.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    };
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-faculty-btn');
+            if (id) openModal(id);
+        });
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+
+    modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+</script>
+
+<style>
+    #faculty-modal div::-webkit-scrollbar {
+        width: 8px;
+    }
+    #faculty-modal div::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    #faculty-modal div::-webkit-scrollbar-thumb {
+        background: rgba(var(--primary-rgb), 0.1);
+        border-radius: 10px;
+    }
+    #faculty-modal div::-webkit-scrollbar-thumb:hover {
+        background: rgba(var(--primary-rgb), 0.2);
+    }
+</style>

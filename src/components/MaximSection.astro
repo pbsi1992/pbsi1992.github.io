@@ -1,0 +1,21 @@
+---
+interface Props {
+  quote: string;
+  reference: string;
+}
+
+const { quote, reference } = Astro.props;
+---
+
+<section class="py-32 bg-site-card/30 border-y border-site-border backdrop-blur-sm">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="text-xl md:text-3xl font-bold text-site-text mb-6 leading-relaxed italic">
+      "{quote}"
+    </p>
+    <div class="flex items-center justify-center gap-4">
+      <div class="h-[1px] w-8 bg-primary/30"></div>
+      <span class="text-primary font-black tracking-[0.3em] uppercase text-xs">{reference}</span>
+      <div class="h-[1px] w-8 bg-primary/30"></div>
+    </div>
+  </div>
+</section>
