@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -10,13 +11,13 @@ const navLinks = [
 ];
 ---
 <header class="sticky top-0 z-50 w-full px-4 md:px-10 py-5">
-  <nav class="max-w-[1516px] mx-auto bg-site-card/80 backdrop-blur-md border border-site-border rounded-[16px] px-6 py-3.5 flex items-center justify-between shadow-xl shadow-black/5">
+  <nav class="max-w-[1516px] mx-auto bg-site-card/80 backdrop-blur-md border border-site-border rounded-[24px] px-6 py-3.5 flex items-center justify-between shadow-xl shadow-black/5">
     <div class="flex items-center gap-12">
       <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <img 
           src="/logo.png" 
           alt="PBSI Logo" 
-          class="w-12 h-12 object-contain"
+          class="w-10 h-10 md:w-12 md:h-12 object-contain"
         />
       </a>
       
@@ -29,14 +30,99 @@ const navLinks = [
       </div>
     </div>
 
-    <div class="flex items-center gap-4">
-      <ThemeToggle />
+    <div class="flex items-center gap-2 md:gap-4">
+      {/* Ensure ThemeToggle is visible on mobile by removing hidden md:block */}
+      <div class="flex items-center">
+        <ThemeToggle />
+      </div>
+      
       <a 
         href="/register" 
-        class="bg-primary text-white px-7 py-3 rounded-xl font-bold text-[15px] hover:brightness-110 transition-all shadow-md inline-block"
+        class="hidden sm:inline-block bg-primary text-white px-7 py-3 rounded-xl font-bold text-[15px] hover:brightness-110 transition-all shadow-md"
       >
         Register
       </a>
+
+      <button 
+        id="menu-toggle"
+        class="lg:hidden p-2.5 text-site-text hover:bg-site-bg rounded-xl transition-all relative w-10 h-10 flex items-center justify-center"
+        aria-label="Toggle Menu"
+        data-state="closed"
+      >
+        <div id="menu-icon-wrapper" class="absolute">
+          <Menu size={24} />
+        </div>
+        <div id="close-icon-wrapper" class="absolute hidden">
+          <X size={24} />
+        </div>
+      </button>
     </div>
   </nav>
+
+  <div 
+    id="mobile-menu" 
+    class="hidden lg:hidden absolute top-full left-4 right-4 mt-4 p-6 bg-site-card/95 backdrop-blur-xl border border-site-border rounded-[32px] shadow-2xl"
+  >
+    <div class="flex flex-col gap-2">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-lg font-bold text-site-text p-4 hover:bg-primary/10 hover:text-primary rounded-2xl transition-all">
+          {link.name}
+        </a>
+      ))}
+      <div class="mt-4 pt-4 border-t border-site-border">
+        <a 
+          href="/register" 
+          class="block w-full bg-primary text-white text-center py-5 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-all"
+        >
+          Register Now
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  // Function to initialize the menu logic
+  function initNav() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuWrapper = document.getElementById('menu-icon-wrapper');
+    const closeWrapper = document.getElementById('close-icon-wrapper');
+
+    if (!menuToggle || !mobileMenu || !menuWrapper || !closeWrapper) return;
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('data-state') === 'open';
+      
+      if (!isOpen) {
+        // Open Menu
+        menuToggle.setAttribute('data-state', 'open');
+        mobileMenu.classList.remove('hidden');
+        menuWrapper.classList.add('hidden');
+        closeWrapper.classList.remove('hidden');
+      } else {
+        // Close Menu
+        menuToggle.setAttribute('data-state', 'closed');
+        mobileMenu.classList.add('hidden');
+        menuWrapper.classList.remove('hidden');
+        closeWrapper.classList.add('hidden');
+      }
+    });
+
+    // Close on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.setAttribute('data-state', 'closed');
+        mobileMenu.classList.add('hidden');
+        menuWrapper.classList.remove('hidden');
+        closeWrapper.classList.add('hidden');
+      });
+    });
+  }
+
+  // Runs on initial load
+  initNav();
+
+  // Re-runs if you are using Astro View Transitions
+  document.addEventListener('astro:after-swap', initNav);
+</script>
