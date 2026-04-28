@@ -105,27 +105,50 @@ const feeBrackets = [
       </div>
 
       <div class="mb-24 overflow-hidden bg-site-card border border-site-border rounded-[32px] md:rounded-[40px] shadow-sm">
-        <div class="p-6 md:p-8 border-b border-site-border bg-site-bg/30">
+        <div class="p-6 md:p-8 border-b border-site-border bg-site-bg/30 flex justify-between items-center">
             <h2 class="text-[10px] font-black text-primary uppercase tracking-[0.4em]">Official Fee Schedule</h2>
+            <span class="hidden md:block text-[9px] font-bold text-site-muted uppercase tracking-widest bg-site-bg px-3 py-1 rounded-full border border-site-border">FY 2026-2027</span>
         </div>
-        <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse min-w-[600px]">
+
+        <div class="block md:hidden divide-y divide-site-border">
+          {feeBrackets.map((b) => (
+            <div class="p-6 space-y-4">
+              <div>
+                <span class="text-[10px] font-black text-primary uppercase tracking-widest">{b.type}</span>
+                <h3 class="text-lg font-bold text-site-text mt-1">{b.includes.join(" & ")}</h3>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-site-bg/50 p-3 rounded-xl border border-site-border/50">
+                  <p class="text-[9px] font-bold text-site-muted uppercase mb-1">Tuition</p>
+                  <p class="text-primary font-black italic">₱0.00</p>
+                </div>
+                <div class="bg-site-bg/50 p-3 rounded-xl border border-site-border/50">
+                  <p class="text-[9px] font-bold text-site-muted uppercase mb-1">Semestral Fee</p>
+                  <p class="text-site-text font-black">₱{b.price}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="hidden md:block overflow-x-auto">
+            <table class="w-full text-left border-collapse">
             <thead>
                 <tr class="bg-site-bg/20">
-                <th class="p-6 md:p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em]">Program Tier</th>
-                <th class="p-6 md:p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Tuition Cost</th>
-                <th class="p-6 md:p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Total Fees</th>
+                <th class="p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em]">Program Tier</th>
+                <th class="p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Tuition Cost</th>
+                <th class="p-8 text-[10px] font-black text-site-muted uppercase tracking-[0.2em] text-center">Total Fees</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-site-border">
                 {feeBrackets.map((b) => (
                   <tr class="hover:bg-primary/[0.02] transition-colors">
-                    <td class="p-6 md:p-8">
-                      <span class="block text-sm md:text-base font-bold text-site-text">{b.type}</span>
-                      <span class="text-[11px] md:text-xs text-site-muted font-medium">{b.includes.join(", ")}</span>
+                    <td class="p-8">
+                      <span class="block text-base font-bold text-site-text">{b.type}</span>
+                      <span class="text-xs text-site-muted font-medium">{b.includes.join(", ")}</span>
                     </td>
-                    <td class="p-6 md:p-8 text-sm md:text-base font-black text-primary text-center italic">₱0.00</td>
-                    <td class="p-6 md:p-8 text-xl md:text-3xl font-black text-site-text text-center tracking-tighter">₱{b.price}</td>
+                    <td class="p-8 text-base font-black text-primary text-center italic">₱0.00</td>
+                    <td class="p-8 text-3xl font-black text-site-text text-center tracking-tighter">₱{b.price}</td>
                   </tr>
                 ))}
             </tbody>
