@@ -1,0 +1,39 @@
+{
+  "title": "Bachelor of Theology",
+  "type": "Undergraduate",
+  "duration": "4 Years",
+  "description": "A comprehensive four-year program designed to provide students with a deep understanding of biblical truths, Reformed doctrine, and original languages.",
+  "fullDescription": "The Bachelor of Theology (B.Th.) is PBSI's premier academic track for those entering full-time ministry. It focuses on the primary sources of Christian faith, requiring students to master the biblical languages of Greek and Hebrew for faithful interpretation and preaching.",
+  "objectives": [
+    "Attain proficiency in Greek and Hebrew exegesis.",
+    "Formulate a coherent systematic theology based on Reformed traditions.",
+    "Develop expository preaching skills for local church ministry.",
+    "Understand the global history of the Church from the Apostles to today."
+  ],
+  "curriculum": [
+    {
+      "semester": "Year 1: Foundation",
+      "courses": ["Introduction to Old Testament", "Introduction to New Testament", "Basic Christian Ethics", "Elementary Greek I", "Elementary Greek II", "Spirituality in Ministry"]
+    },
+    {
+      "semester": "Year 2: Theology & Language",
+      "courses": ["Systematic Theology I", "Elementary Hebrew I", "Elementary Hebrew II", "Church History: Ancient & Medieval", "Hermeneutics", "Homiletics I"]
+    },
+    {
+      "semester": "Year 3: Exegesis",
+      "courses": ["Systematic Theology II", "Greek Exegesis: Romans", "Hebrew Exegesis: Psalms", "Church History: Reformation", "Christian Education", "Evangelism & Missions"]
+    },
+    {
+      "semester": "Year 4: Synthesis",
+      "courses": ["Systematic Theology III", "Apologetics", "Church Administration", "Pastoral Counseling", "Senior Thesis", "Ministry Internship"]
+    }
+  ],
+  "admissionRequirements": [
+    "High School Diploma (original and photocopy)",
+    "Pastoral Recommendation from a local church",
+    "Personal Faith Testimony",
+    "Completed PBSI Application Form",
+    "Successful interview with the Academic Dean"
+  ],
+  "careerPaths": ["Ordained Pastor", "Bible Teacher", "Theological Writer", "Missionary", "Church Administrator"]
+}

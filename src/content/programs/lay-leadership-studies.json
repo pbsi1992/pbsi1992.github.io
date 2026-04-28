@@ -1,0 +1,46 @@
+{
+  "title": "Lay Leadership Studies",
+  "type": "Special Program",
+  "duration": "1 Year",
+  "description": "A certificate program designed to equip church elders, deacons, and lay leaders for effective service in the local church.",
+  "fullDescription": "This program is specifically crafted for those who are called to serve the church while maintaining their secular vocations. It provides essential theological foundations and practical leadership tools to support the session and the congregation in a Reformed context.",
+  "objectives": [
+    "Understand the biblical role and qualifications of church officers.",
+    "Develop basic skills in leading small groups and Bible studies.",
+    "Gain a clear understanding of Presbyterian church polity and government.",
+    "Equip leaders for effective visitation and member care."
+  ],
+  "curriculum": [
+    {
+      "semester": "First Semester: Foundations",
+      "courses": [
+        "Biblical Eldership",
+        "Introduction to Reformed Theology",
+        "Leading Small Groups",
+        "Overview of the Old Testament"
+      ]
+    },
+    {
+      "semester": "Second Semester: Practice",
+      "courses": [
+        "Presbyterian Church Polity",
+        "Overview of the New Testament",
+        "Basic Biblical Counseling",
+        "Evangelism in the Local Church"
+      ]
+    }
+  ],
+  "admissionRequirements": [
+    "Endorsement from the local Church Session",
+    "Active church membership for at least 3 years",
+    "High school diploma or its equivalent",
+    "Brief essay on the desire to serve the church"
+  ],
+  "careerPaths": [
+    "Ordained Elder",
+    "Deacon",
+    "Small Group Coordinator",
+    "Lay Preacher",
+    "Ministry Volunteer Leader"
+  ]
+}

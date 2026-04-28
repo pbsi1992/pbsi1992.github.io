@@ -1,0 +1,30 @@
+{
+  "title": "Master of Arts in Pastoral Studies",
+  "type": "Graduate",
+  "duration": "2 Years",
+  "description": "Advanced training for pastors and ministry professionals looking to deepen their theological and practical expertise.",
+  "fullDescription": "Designed for individuals already holding a Bachelor's degree, the MAPS program offers rigorous intellectual engagement with pastoral care, preaching, and contemporary ethical dilemmas facing the church.",
+  "objectives": [
+    "Synthesize complex theological concepts for pulpit ministry.",
+    "Provide expert-level soul care through biblical counseling.",
+    "Evaluate modern ethical issues from a Reformed perspective.",
+    "Produce high-quality theological research."
+  ],
+  "curriculum": [
+    {
+      "semester": "Year 1: Pastoral Core",
+      "courses": ["Advanced Systematic Theology", "Pastoral Care in Crisis", "Advanced Homiletics", "Greek/Hebrew Refresher", "Theology of Missions"]
+    },
+    {
+      "semester": "Year 2: Research & Practice",
+      "courses": ["Contemporary Ethics", "Church Revitalization", "Graduate Seminar", "Master's Thesis I", "Master's Thesis II"]
+    }
+  ],
+  "admissionRequirements": [
+    "Bachelor of Theology or equivalent degree",
+    "Official Transcript of Records (GPA 2.5 or higher)",
+    "Letter of Intent and Research Interest",
+    "Minimum of 3 years ministry leadership"
+  ],
+  "careerPaths": ["Senior Pastor", "Theological Consultant", "Military/Hospital Chaplain", "Academic Dean"]
+}

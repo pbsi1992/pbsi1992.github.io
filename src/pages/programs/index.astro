@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { GraduationCap, BookOpen, Church, Scroll, Users, Clock, ArrowRight } from 'lucide-react';
+
+const allPrograms = await getCollection('programs');
+
+const iconMap: Record<string, any> = {
+  'ma-pastoral-studies': GraduationCap,
+  'bachelor-theology': BookOpen,
+  'bachelor-church-ministry': Church,
+  'diploma-theological-studies': Scroll,
+  'lay-leadership-studies': Users
+};
+---
+
+<Layout title="Academic Programs | PBSI">
+  <main class="max-w-[1596px] mx-auto px-4 md:px-10 py-24">
+    <div class="text-center mb-24">
+      <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Educational Tracks</h2>
+      <h1 class="text-5xl md:text-7xl font-extrabold text-site-text tracking-tighter mb-8">
+        Academic Programs
+      </h1>
+      <p class="text-site-muted text-xl md:text-2xl max-w-3xl mx-auto font-medium">
+        Discover our specialized paths designed for deep theological exploration and practical ministry preparation.
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      {
+        allPrograms.map((prog) => {
+          const Icon = iconMap[prog.id] || BookOpen;
+          return (
+            <div class="group bg-site-card border border-site-border rounded-[40px] p-8 md:p-12 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20">
+              <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/3">
+                  <div class="flex items-center gap-6 mb-8">
+                    {/* ENFORCED BOX SHAPE: added shrink-0 and aspect-square */}
+                    <div class="text-primary bg-site-bg w-20 h-20 shrink-0 aspect-square flex items-center justify-center rounded-[24px] border border-site-border group-hover:scale-105 transition-transform duration-500 overflow-hidden">
+                      <Icon size={40} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <span class="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full mb-2 inline-block">
+                        {prog.data.type}
+                      </span>
+                      <h2 class="text-3xl font-bold text-site-text leading-tight">{prog.data.title}</h2>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 text-site-muted font-bold text-sm uppercase tracking-widest mb-8">
+                    <Clock size={20} className="text-primary" />
+                    {prog.data.duration} Program
+                  </div>
+                  <a href={`/programs/${prog.id}`} class="inline-flex w-full lg:w-auto justify-center items-center gap-3 bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:-translate-y-1 hover:shadow-lg transition-all active:scale-95">
+                    Explore Full Curriculum
+                    <ArrowRight size={20} strokeWidth={3} />
+                  </a>
+                </div>
+
+                <div class="lg:w-2/3 border-t lg:border-t-0 lg:border-l border-site-border pt-10 lg:pt-0 lg:pl-12">
+                  <h3 class="text-xl font-bold text-site-text mb-4 uppercase tracking-tight">Overview</h3>
+                  <p class="text-site-muted text-lg leading-relaxed mb-10 font-medium italic">
+                    "{prog.data.description}"
+                  </p>
+                  
+                  <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Core Objectives</h4>
+                      <ul class="space-y-3">
+                        {prog.data.objectives.slice(0, 3).map((obj: string) => (
+                          <li class="text-sm text-site-muted font-medium flex gap-3">
+                            <span class="text-primary">•</span> {obj}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Career Paths</h4>
+                      <div class="flex flex-wrap gap-2">
+                        {prog.data.careerPaths.map((path: string) => (
+                          <span class="bg-site-bg text-[10px] font-bold text-site-text px-3 py-1 rounded-lg border border-site-border uppercase tracking-wide">
+                            {path}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </main>
+</Layout>

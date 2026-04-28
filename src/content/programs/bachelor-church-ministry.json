@@ -1,0 +1,38 @@
+{
+  "title": "Bachelor of Church Ministry",
+  "type": "Undergraduate",
+  "duration": "4 Years",
+  "description": "Focusing on the practical aspects of leading and managing church organizations and educational programs.",
+  "fullDescription": "The Bachelor of Church Ministry is tailored for students who intend to serve as church administrators, educators, or ministry leads. While grounded in theology, the emphasis remains on the practical execution of ministry within a local community.",
+  "objectives": [
+    "Design and implement effective Christian Education programs.",
+    "Apply biblical principles to church leadership and finance.",
+    "Lead various ministry departments including Youth and Children's Ministry.",
+    "Effectively counsel church members using biblical methods."
+  ],
+  "curriculum": [
+    {
+      "semester": "Year 1: Core",
+      "courses": ["OT Survey", "NT Survey", "Basic Doctrine", "Intro to Christian Ed", "English Composition"]
+    },
+    {
+      "semester": "Year 2: Specialized",
+      "courses": ["Children's Ministry", "Youth Ministry", "Church Finance", "Intro to Music & Worship", "Public Speaking"]
+    },
+    {
+      "semester": "Year 3: Advanced",
+      "courses": ["Homiletics", "Biblical Counseling", "Teacher Training", "Conflict Management", "Sociology of Religion"]
+    },
+    {
+      "semester": "Year 4: Practical",
+      "courses": ["Church Growth Strategies", "Senior Project", "Advanced Church Admin", "Leadership Seminar", "Full-Year Internship"]
+    }
+  ],
+  "admissionRequirements": [
+    "High School Graduate",
+    "Local Church Membership for at least 2 years",
+    "Recommendation from Church Elder or Pastor",
+    "Medical Certificate of good health"
+  ],
+  "careerPaths": ["Director of Christian Education", "Church Administrator", "Youth Pastor", "Children's Ministry Coordinator"]
+}

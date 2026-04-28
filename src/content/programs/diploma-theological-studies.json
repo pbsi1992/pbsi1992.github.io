@@ -1,0 +1,47 @@
+{
+  "title": "Diploma in Theological Studies",
+  "type": "Special Program",
+  "duration": "2 Years",
+  "description": "A two-year intensive diploma providing a solid biblical and theological base for various ministry roles.",
+  "fullDescription": "The Diploma in Theological Studies (D.T.S.) is an intermediate program for individuals who desire more than a certificate but are not ready for a full four-year degree. It covers the core essentials of biblical survey, doctrine, and church history.",
+  "objectives": [
+    "Establish a firm grasp of the metanarrative of Scripture.",
+    "Understand the core tenets of the Westminster Standards.",
+    "Learn the fundamentals of teaching and communicating biblical truth.",
+    "Identify the major turning points in the history of the Christian Church."
+  ],
+  "curriculum": [
+    {
+      "semester": "Year 1: Bible & Doctrine",
+      "courses": [
+        "OT Survey I",
+        "NT Survey I",
+        "Basic Christian Doctrine",
+        "Personal Evangelism",
+        "English for Theology"
+      ]
+    },
+    {
+      "semester": "Year 2: History & Ministry",
+      "courses": [
+        "Church History Overview",
+        "Principles of Teaching",
+        "Christian Ethics",
+        "Introduction to Missions",
+        "Biblical Stewardship"
+      ]
+    }
+  ],
+  "admissionRequirements": [
+    "High school diploma or equivalent",
+    "Pastoral recommendation letter",
+    "Successful completion of the PBSI entrance interview",
+    "Personal testimony of salvation"
+  ],
+  "careerPaths": [
+    "Bible School Teacher",
+    "Missionary Staff",
+    "Church Educational Assistant",
+    "Christian Non-profit Worker"
+  ]
+}

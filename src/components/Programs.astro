@@ -1,88 +1,75 @@
 ---
-const programs = [
-  {
-    category: "Graduate",
-    title: "MA in Pastoral Studies",
-    duration: "2 Years",
-    description: "Advanced theological training for experienced practitioners seeking deeper academic and pastoral mastery.",
-    icon: "🎓"
-  },
-  {
-    category: "Undergraduate",
-    title: "Bachelor of Theology",
-    duration: "3 Years",
-    description: "A comprehensive foundation in biblical languages, systematic theology, and historical perspectives.",
-    icon: "📖"
-  },
-  {
-    category: "Undergraduate",
-    title: "Bachelor in Church Ministry",
-    duration: "3 Years",
-    description: "Practical preparation for effective church leadership, counseling, and community engagement.",
-    icon: "⛪"
-  },
-  {
-    category: "Special Program",
-    title: "Diploma in Theological Studies",
-    duration: "1 Year",
-    description: "Focused theological education for those seeking formal training without a full degree commitment.",
-    icon: "📜"
-  },
-  {
-    category: "Special Program",
-    title: "Lay Leadership Studies",
-    duration: "1 Year",
-    description: "Equipping church members and officers with essential skills for effective local church service.",
-    icon: "🤝"
-  }
-];
+import { getCollection } from 'astro:content';
+import { GraduationCap, BookOpen, Church, Scroll, Users, Clock, ArrowRight } from 'lucide-react';
+
+const allPrograms = await getCollection('programs');
+
+const iconMap: Record<string, any> = {
+  'ma-pastoral-studies': GraduationCap,
+  'bachelor-theology': BookOpen,
+  'bachelor-church-ministry': Church,
+  'diploma-theological-studies': Scroll,
+  'lay-leadership-studies': Users
+};
 ---
 
 <section class="max-w-[1596px] mx-auto px-4 md:px-10 py-24">
   <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl text-left">
       <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Academic Excellence</h2>
       <h3 class="text-4xl md:text-5xl font-extrabold text-site-text leading-tight">
         Programs Offered:
       </h3>
     </div>
-    <p class="text-site-muted text-lg max-w-md pb-1">
-      Explore our specialized tracks designed to equip you for global ministry and leadership.
-    </p>
+    <div class="flex flex-col items-start md:items-end">
+        <p class="text-site-muted text-lg max-w-md pb-6 md:text-right font-medium">
+          Explore our specialized tracks designed to equip you for global ministry and leadership.
+        </p>
+        <a href="/programs" class="bg-primary/10 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all duration-300">
+          View All Programs
+        </a>
+    </div>
   </div>
 
   <div class="flex flex-wrap justify-center gap-8">
-    {programs.map((program) => (
-      <div class="group bg-site-card border border-site-border p-8 rounded-[32px] hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-primary/10 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[500px]">
-        <div class="flex justify-between items-start mb-8">
-          <div class="text-4xl bg-site-bg w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500">
-            {program.icon}
-          </div>
-          <span class="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-3 py-1.5 rounded-full">
-            {program.category}
-          </span>
-        </div>
+    {
+      allPrograms.map((prog) => {
+        const Icon = iconMap[prog.id] || BookOpen;
         
-        <h4 class="text-2xl font-bold text-site-text mb-3 group-hover:text-primary transition-colors">
-          {program.title}
-        </h4>
-        
-        <div class="flex items-center gap-2 mb-4">
-           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-site-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-           <span class="text-xs font-semibold text-site-muted uppercase tracking-wider">{program.duration}</span>
-        </div>
-        
-        <p class="text-site-muted leading-relaxed mb-8 text-base line-clamp-3">
-          {program.description}
-        </p>
+        return (
+          <div class="group bg-site-card border border-site-border p-8 rounded-[32px] transition-all duration-500 ease-out hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-primary/10 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[500px] flex flex-col h-full">
+            <div class="flex justify-between items-start mb-8">
+              {/* Added aspect-square and shrink-0 to prevent the box from squishing */}
+              <div class="text-primary bg-site-bg w-16 h-16 shrink-0 aspect-square flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 ease-out border border-site-border overflow-hidden">
+                <Icon size={32} strokeWidth={1.5} />
+              </div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+                {prog.data.type}
+              </span>
+            </div>
+            
+            <div class="flex-grow">
+              <h4 class="text-2xl font-bold text-site-text mb-3 group-hover:text-primary transition-colors duration-300">
+                {prog.data.title}
+              </h4>
+              <div class="flex items-center gap-2 mb-4">
+                <Clock size={16} className="text-site-muted" />
+                <span class="text-xs font-semibold text-site-muted uppercase tracking-wider">
+                  {prog.data.duration}
+                </span>
+              </div>
+              <p class="text-site-muted leading-relaxed mb-8 text-base line-clamp-3 font-medium">
+                {prog.data.description}
+              </p>
+            </div>
 
-        <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all">
-          Explore Program
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14m-7-7 7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-    ))}
+            <a href={`/programs/${prog.id}`} class="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all duration-300">
+              Explore Program
+              <ArrowRight size={20} strokeWidth={3} />
+            </a>
+          </div>
+        );
+      })
+    }
   </div>
 </section>

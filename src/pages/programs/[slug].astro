@@ -1,0 +1,121 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const programs = await getCollection('programs');
+  return programs.map((entry: CollectionEntry<'programs'>) => ({
+    params: { slug: entry.id }, 
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'programs'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+interface CurriculumSemester {
+  semester: string;
+  courses: string[];
+}
+---
+
+<Layout title={`${data.title} | PBSI`}>
+  <main class="max-w-[1596px] mx-auto px-4 md:px-10 py-24">
+    <div class="bg-site-card rounded-[40px] border border-site-border overflow-visible shadow-sm">
+      
+      <div class="p-10 md:p-20 border-b border-site-border bg-site-bg/30 rounded-t-[40px]">
+        <div class="flex flex-wrap items-center gap-4 mb-8">
+            <span class="bg-primary/10 text-primary px-5 py-2 rounded-full text-[12px] font-black uppercase tracking-widest">
+                {data.type}
+            </span>
+            <div class="flex items-center gap-2 text-site-muted font-bold text-sm uppercase tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                {data.duration}
+            </div>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-site-text mb-10 leading-tight tracking-tighter max-w-5xl">
+            {data.title}
+        </h1>
+        <p class="text-xl md:text-2xl text-site-muted max-w-4xl leading-relaxed font-medium">
+            {data.fullDescription}
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 items-start relative">
+        
+        <aside class="lg:sticky lg:top-32 p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-site-border bg-site-card z-10 self-start">
+          <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-primary tracking-tight">Admission Requirements</h2>
+            <ul class="space-y-5">
+              {data.admissionRequirements.map((req: string) => (
+                <li class="flex gap-4 text-base text-site-muted font-medium leading-snug">
+                  <span class="text-primary mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17 4 12"/></svg>
+                  </span> 
+                  {req}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold mb-8 text-primary tracking-tight">Career Opportunities</h2>
+            <div class="flex flex-wrap gap-3">
+              {data.careerPaths.map((path: string) => (
+                <span class="bg-site-bg border border-site-border px-4 py-2 rounded-xl text-xs font-bold text-site-text uppercase tracking-wider">
+                  {path}
+                </span>
+              ))}
+            </div>
+          </section>
+        </aside>
+
+        <div class="lg:col-span-2 p-10 md:p-20">
+          <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-10 text-site-text tracking-tight flex items-center gap-4">
+               Program Objectives
+               <div class="h-1 flex-grow bg-site-border rounded-full opacity-50"></div>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              {data.objectives.map((obj: string) => (
+                <div class="flex gap-5 p-7 rounded-[32px] border border-site-border bg-site-bg/20">
+                  <div class="text-primary font-black text-2xl italic">Q.</div>
+                  <p class="text-site-muted text-base leading-relaxed font-medium">{obj}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-10 text-site-text tracking-tight flex items-center gap-4">
+                Curriculum Overview
+                <div class="h-1 flex-grow bg-site-border rounded-full opacity-50"></div>
+            </h2>
+            <div class="space-y-8">
+              {data.curriculum.map((sem: CurriculumSemester) => (
+                <div class="border border-site-border rounded-[32px] overflow-hidden bg-site-card shadow-sm">
+                  <div class="bg-site-bg px-10 py-5 border-b border-site-border font-bold text-primary text-lg flex justify-between items-center">
+                    {sem.semester}
+                    <span class="text-[10px] bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest font-black">Core Modules</span>
+                  </div>
+                  <ul class="p-10 grid md:grid-cols-2 gap-x-12 gap-y-5">
+                    {sem.courses.map((course: string) => (
+                      <li class="text-site-muted text-base flex items-center gap-4 font-medium">
+                        <div class="w-2.5 h-2.5 bg-primary rounded-full opacity-40"></div>
+                        {course}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
