@@ -13,57 +13,61 @@ const iconMap: Record<string, any> = {
 };
 ---
 
-<section class="max-w-[1596px] mx-auto px-4 md:px-10 py-24">
-  <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<section class="max-w-[1596px] mx-auto px-4 md:px-10 py-16 md:py-24">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
     <div class="max-w-2xl text-left">
-      <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Academic Excellence</h2>
-      <h3 class="text-4xl md:text-5xl font-extrabold text-site-text leading-tight">
+      <h2 class="text-primary font-bold tracking-widest uppercase text-xs md:text-sm mb-3">Academic Excellence</h2>
+      <h3 class="text-3xl md:text-5xl font-extrabold text-site-text leading-tight">
         Programs Offered:
       </h3>
     </div>
-    <div class="flex flex-col items-start md:items-end">
-        <p class="text-site-muted text-lg max-w-md pb-6 md:text-right font-medium">
+    <div class="flex flex-col items-start md:items-end w-full md:w-auto">
+        <p class="text-site-muted text-base md:text-lg max-w-md pb-6 md:text-right font-medium">
           Explore our specialized tracks designed to equip you for global ministry and leadership.
         </p>
-        <a href="/programs" class="bg-primary/10 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all duration-300">
+        <a href="/programs" class="w-full md:w-auto text-center bg-primary/10 text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all duration-300">
           View All Programs
         </a>
     </div>
   </div>
 
-  <div class="flex flex-wrap justify-center gap-8">
+  <div class="flex flex-wrap justify-center gap-6 md:gap-8">
     {
       allPrograms.map((prog) => {
         const Icon = iconMap[prog.id] || BookOpen;
         
         return (
-          <div class="group bg-site-card border border-site-border p-8 rounded-[32px] transition-all duration-500 ease-out hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-primary/10 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[500px] flex flex-col h-full">
+          /* W-FULL for mobile.
+             MD:W-[calc(50%-20px)] for 2-column feel on tablets.
+             LG:W-[calc(33.333%-22px)] for 3-column feel on desktops.
+             FLEX and ITEMS-STRETCH on parent combined with H-FULL here keeps heights equal.
+          */
+          <div class="group bg-site-card border border-site-border p-8 rounded-[32px] transition-all duration-500 ease-out hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-primary/10 flex flex-col w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] min-h-full">
             <div class="flex justify-between items-start mb-8">
-              {/* Added aspect-square and shrink-0 to prevent the box from squishing */}
-              <div class="text-primary bg-site-bg w-16 h-16 shrink-0 aspect-square flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 ease-out border border-site-border overflow-hidden">
+              <div class="text-primary bg-site-bg w-14 h-14 md:w-16 md:h-16 shrink-0 aspect-square flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 ease-out border border-site-border overflow-hidden">
                 <Icon size={32} strokeWidth={1.5} />
               </div>
-              <span class="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+              <span class="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-3 py-1.5 rounded-full">
                 {prog.data.type}
               </span>
             </div>
             
             <div class="flex-grow">
-              <h4 class="text-2xl font-bold text-site-text mb-3 group-hover:text-primary transition-colors duration-300">
+              <h4 class="text-xl md:text-2xl font-bold text-site-text mb-3 group-hover:text-primary transition-colors duration-300">
                 {prog.data.title}
               </h4>
               <div class="flex items-center gap-2 mb-4">
-                <Clock size={16} className="text-site-muted" />
-                <span class="text-xs font-semibold text-site-muted uppercase tracking-wider">
+                <Clock size={14} className="text-site-muted" />
+                <span class="text-[10px] md:text-xs font-semibold text-site-muted uppercase tracking-wider">
                   {prog.data.duration}
                 </span>
               </div>
-              <p class="text-site-muted leading-relaxed mb-8 text-base line-clamp-3 font-medium">
+              <p class="text-site-muted leading-relaxed mb-8 text-sm md:text-base line-clamp-3 font-medium">
                 {prog.data.description}
               </p>
             </div>
 
-            <a href={`/programs/${prog.id}`} class="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all duration-300">
+            <a href={`/programs/${prog.id}`} class="mt-auto inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all duration-300">
               Explore Program
               <ArrowRight size={20} strokeWidth={3} />
             </a>
