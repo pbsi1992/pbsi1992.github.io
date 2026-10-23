@@ -303,3 +303,9 @@ Built for PBSI Digital Transformation (2026–2027)
 
 Portfolio: https://jerohalili.is-a.dev  
 GitHub: https://github.com/jerohalili
+
+---
+
+## License
+
+Copyright © 2026 PBSI. All Rights Reserved.
