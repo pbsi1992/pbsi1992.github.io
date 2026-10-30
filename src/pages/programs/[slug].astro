@@ -24,7 +24,7 @@ interface CurriculumSemester {
 ---
 
 <Layout title={`${data.title}`}>
-  <main class="max-w-[1596px] mx-auto px-4 md:px-10 py-24">
+  <main class="max-w-399 mx-auto px-4 md:px-10 py-24">
     <div class="bg-site-card rounded-[40px] border border-site-border overflow-visible shadow-sm">
       
       <div class="p-10 md:p-20 border-b border-site-border bg-site-bg/30 rounded-t-[40px]">
@@ -78,11 +78,11 @@ interface CurriculumSemester {
           <section class="mb-20">
             <h2 class="text-3xl font-bold mb-10 text-site-text tracking-tight flex items-center gap-4">
                Program Objectives
-               <div class="h-1 flex-grow bg-site-border rounded-full opacity-50"></div>
+               <div class="h-1 grow bg-site-border rounded-full opacity-50"></div>
             </h2>
             <div class="grid md:grid-cols-2 gap-8">
               {data.objectives.map((obj: string) => (
-                <div class="flex gap-5 p-7 rounded-[32px] border border-site-border bg-site-bg/20">
+                <div class="flex gap-5 p-7 rounded-4xl border border-site-border bg-site-bg/20">
                   <div class="text-primary font-black text-2xl italic">Q.</div>
                   <p class="text-site-muted text-base leading-relaxed font-medium">{obj}</p>
                 </div>
@@ -93,11 +93,11 @@ interface CurriculumSemester {
           <section>
             <h2 class="text-3xl font-bold mb-10 text-site-text tracking-tight flex items-center gap-4">
                 Curriculum Overview
-                <div class="h-1 flex-grow bg-site-border rounded-full opacity-50"></div>
+                <div class="h-1 grow bg-site-border rounded-full opacity-50"></div>
             </h2>
             <div class="space-y-8">
               {data.curriculum.map((sem: CurriculumSemester) => (
-                <div class="border border-site-border rounded-[32px] overflow-hidden bg-site-card shadow-sm">
+                <div class="border border-site-border rounded-4xl overflow-hidden bg-site-card shadow-sm">
                   <div class="bg-site-bg px-10 py-5 border-b border-site-border font-bold text-primary text-lg flex justify-between items-center">
                     {sem.semester}
                     <span class="text-[10px] bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest font-black">Core Modules</span>

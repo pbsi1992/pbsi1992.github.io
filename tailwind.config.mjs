@@ -10,6 +10,12 @@ export default {
         'sb-text': '#1A1A1A',
         'sb-muted': '#59595A',
       },
+      maxWidth: {
+        '399': '1596px',
+      },
+      borderRadius: {
+        '4xl': '32px',
+      },
     },
   },
   plugins: [],
