@@ -2,6 +2,7 @@
 
 @theme {
   --color-primary: var(--brand-primary);
+  --color-primary-dark: var(--brand-primary-dark);
   --color-primary-light: #407BFF;
   
   --color-site-bg: var(--bg-color);
@@ -13,6 +14,7 @@
 
 :root {
   --brand-primary: #0033A0; /* Your original blue */
+  --brand-primary-dark: #002678;
   --bg-color: #F7F7F8;
   --text-color: #1A1A1A;
   --card-bg: #FFFFFF;
@@ -22,7 +24,8 @@
 
 .dark {
   /* Slightly lighter, more vibrant blue for better dark mode legibility */
-  --brand-primary: #3B82F6; 
+  --brand-primary: #3B82F6;
+  --brand-primary-dark: #1D4ED8;
   --bg-color: #0F172A;
   --text-color: #F8FAFC;
   --card-bg: #1E293B;
