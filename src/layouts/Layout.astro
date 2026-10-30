@@ -4,15 +4,32 @@ import Banner from '../components/Banner.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Presbyterian Bible Seminary Inc. (PBSI): explore theology and ministry programs, admission requirements, fees and how to contact us.',
+} = Astro.props;
+
+// Some pages already pass "... | PBSI"; only add the suffix when it is missing.
+const fullTitle = title.endsWith('| PBSI') ? title : `${title} | PBSI`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og-image.png', Astro.site).href;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <title>{title} | PBSI</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Presbyterian Bible Seminary Inc." />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <script is:inline>
       const getTheme = () => {
